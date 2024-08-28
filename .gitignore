@@ -1,0 +1,78 @@
+# Ignore the Library folder in 2D FB Project
+Mvdo Proyecto Unity/Library/
+
+# Ignore the following files and folders across the entire Unity project
+Mvdo Proyecto Unity/Library/
+
+# User-specific files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Unity3D generated files
+*.pidb.meta
+*.pdb
+*.mdb
+*.opendb
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+
+# Crashlytics generated files
+crashlytics-build.properties
+
+# Packed Addressable Assets
+*.bin
+*.xml
+
+# Auto-generated files
+*.log
+*.obj
+*.suo
+*.swp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.psd
+*.obj
+*.bak
+
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+*.meta
+
+# Hidden folders
+.*/**
+
+# Temporary files and local caches
+Temp/
+Obj/
+UnityGenerated/
+Build/
+Builds/
+Library/
+Logs/
+MemoryCaptures/
+AssetBundles/
+
+# Other generated files
+sysinfo.txt
+*.stacktrace
+*.prof
+*.diff
+*.patch
+*.dump
+
+# Unity Addressable Assets
+addressableassetsdata/*/*.bin
+addressableassetsdata/*/*.xml
