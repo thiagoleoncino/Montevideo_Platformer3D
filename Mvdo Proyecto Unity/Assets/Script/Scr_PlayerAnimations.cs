@@ -22,6 +22,11 @@ public class Scr_PlayerAnimations : MonoBehaviour
         SetAnimation(scriptMove.currentMovement != Vector3.zero, "IsMoving");
 
         SetAnimation(scriptMove.jumpBool, "IsJumping");
+
+        SetAnimation(scriptMove.canMove, "CanMove"); //New
+        
+        animator.SetFloat("EjeY", scriptMove.rigidBody.velocity.y);
+
     }
 
     public void SetAnimation(bool Action, string Animation)
@@ -34,6 +39,16 @@ public class Scr_PlayerAnimations : MonoBehaviour
         {
             animator.SetBool(Animation, false);
         }
+    }
+
+    public void CanMove()
+    {
+        scriptMove.canMove = true;
+    }
+
+    public void CantMove()
+    {
+        scriptMove.canMove = false;
     }
 
     public void JumpEvent()

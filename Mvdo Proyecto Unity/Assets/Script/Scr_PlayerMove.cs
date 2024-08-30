@@ -17,7 +17,7 @@ public class Scr_PlayerMove : MonoBehaviour
 
     //Movimiento
     private InputAction moveAction;
-    private Rigidbody rigidBody;
+    [HideInInspector] public Rigidbody rigidBody; 
     [Header("Movimiento")]
     public Vector3 currentMovement;
     public float moveSpeed;
@@ -27,6 +27,9 @@ public class Scr_PlayerMove : MonoBehaviour
     [Header("Salto")]
     public float jumpForce;
     public bool jumpBool;
+
+    [Header("Estado")] //New
+    public bool canMove;
 
     private void Awake()
     {
@@ -39,11 +42,19 @@ public class Scr_PlayerMove : MonoBehaviour
         jumpAction = actionMap.FindAction("Jump");
     }
 
+    private void Start()
+    {
+        
+        canMove = true;
+    }
     private void FixedUpdate()
     {
-        StickMovement();
+        if(canMove)
+        {
+            StickMovement();
 
-        InputActionBool(jumpAction, value => jumpBool = value);
+            InputActionBool(jumpAction, value => jumpBool = value);
+        }
     }
 
     public bool IsGrounded() //Ground Check
