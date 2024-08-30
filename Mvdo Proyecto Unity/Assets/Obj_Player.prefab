@@ -1092,10 +1092,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  rigidBody: {fileID: 0}
+  currentMovement: {x: 0, y: 0, z: 0}
   moveSpeed: 5
   jumpForce: 5
-  Jump: 0
-  currentMovement: {x: 0, y: 0, z: 0}
+  jumpBool: 0
+  canMove: 0
 --- !u!114 &8771166758336609517
 MonoBehaviour:
   m_ObjectHideFlags: 0

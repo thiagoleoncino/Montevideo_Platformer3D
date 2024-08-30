@@ -17,7 +17,7 @@ public class Scr_PlayerMove : MonoBehaviour
 
     //Movimiento
     private InputAction moveAction;
-    [HideInInspector] public Rigidbody rigidBody; 
+    [HideInInspector] public Rigidbody rigidBody;
     [Header("Movimiento")]
     public Vector3 currentMovement;
     public float moveSpeed;
@@ -44,12 +44,12 @@ public class Scr_PlayerMove : MonoBehaviour
 
     private void Start()
     {
-        
+
         canMove = true;
     }
     private void FixedUpdate()
     {
-        if(canMove)
+        if (canMove)
         {
             StickMovement();
 
@@ -69,11 +69,19 @@ public class Scr_PlayerMove : MonoBehaviour
         inputAction.canceled += ctx => boolAction(false);
     }
 
+    public void JumpFunction()
+    {
+        if (IsGrounded())
+        {
+            rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
     private void StickMovement() //Movimiento con Stick
     {
         Vector2 stickInput = moveAction.ReadValue<Vector2>();
 
-        if (IsGrounded()) 
+        if (IsGrounded())
         {
             currentMovement = new Vector3(stickInput.x, 0, stickInput.y) * moveSpeed * Time.fixedDeltaTime;
             rigidBody.MovePosition(rigidBody.position + currentMovement);
@@ -87,14 +95,6 @@ public class Scr_PlayerMove : MonoBehaviour
         else
         {
             rigidBody.MovePosition(rigidBody.position + currentMovement);
-        }
-    } 
-
-    public void JumpFunction()
-    {
-        if (IsGrounded())
-        {
-            rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 

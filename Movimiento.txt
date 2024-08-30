@@ -1,0 +1,64 @@
+    private void StickMovement() //Movimiento con Stick
+    {
+        Vector2 stickInput = moveAction.ReadValue<Vector2>();
+
+        if (IsGrounded()) 
+        {
+            currentMovement = new Vector3(stickInput.x, 0, stickInput.y) * moveSpeed * Time.fixedDeltaTime;
+            rigidBody.MovePosition(rigidBody.position + currentMovement);
+
+            if (stickInput != Vector2.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(new Vector3(stickInput.x, 0, stickInput.y));
+                rigidBody.MoveRotation(Quaternion.Slerp(rigidBody.rotation, targetRotation, Time.fixedDeltaTime * 10f));
+            }
+        }
+        else
+        {
+            rigidBody.MovePosition(rigidBody.position + currentMovement);
+        }
+    } 
+
+//Dpenediendo de la Ultima Posicion
+    
+public Quaternion lastRotation;
+
+    private void StickMovement() // Movimiento con Stick
+    {
+        Vector2 stickInput = moveAction.ReadValue<Vector2>();
+
+        if (IsGrounded())
+        {
+            // Obtén la dirección del personaje basada en la última rotación
+            Vector3 forward = lastRotation * Vector3.forward;
+            Vector3 right = lastRotation * Vector3.right;
+
+            // Calcula la dirección de movimiento
+            Vector3 moveDirection = (stickInput.x * right + stickInput.y * forward).normalized;
+
+            // Calcula el movimiento en el espacio
+            currentMovement = moveDirection * moveSpeed * Time.fixedDeltaTime;
+            rigidBody.MovePosition(rigidBody.position + currentMovement);
+
+            if (stickInput != Vector2.zero)
+            {
+                // Calcula la rotación deseada
+                Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+
+                // Interpola la rotación actual hacia la rotación deseada
+                rigidBody.MoveRotation(Quaternion.Slerp(rigidBody.rotation, targetRotation, Time.fixedDeltaTime * 10f));
+            }
+            else
+            {
+                // Guarda la última rotación cuando se deja de mover
+                lastRotation = rigidBody.rotation;
+            }
+        }
+        else
+        {
+            // Movimiento en el aire
+            Vector3 moveDirection = new Vector3(stickInput.x, 0, stickInput.y).normalized;
+            currentMovement = moveDirection * moveSpeed * Time.fixedDeltaTime;
+            rigidBody.MovePosition(rigidBody.position + currentMovement);
+        }
+    }
