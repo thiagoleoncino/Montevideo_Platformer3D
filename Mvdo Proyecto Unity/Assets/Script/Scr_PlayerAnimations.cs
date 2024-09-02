@@ -17,16 +17,14 @@ public class Scr_PlayerAnimations : MonoBehaviour
 
     private void Update()
     {
-        SetAnimation(scriptMove.IsGrounded(), "IsGrounded");
+        //Si se puede mover
+        SetAnimation(scriptMove.canMove, "CanMove"); 
 
-        SetAnimation(scriptMove.currentMovement != Vector3.zero, "IsMoving");
+        //Animacion de Caminar
+        SetAnimation(scriptMove.stickInput != Vector2.zero, "IsMoving");
 
-        SetAnimation(scriptMove.jumpBool, "IsJumping");
-
-        SetAnimation(scriptMove.canMove, "CanMove"); //New
-        
-        animator.SetFloat("EjeY", scriptMove.rigidBody.velocity.y);
-
+        //Animacion de Correr
+        SetAnimation(scriptMove.isRunning, "IsRunning");
     }
 
     public void SetAnimation(bool Action, string Animation)
@@ -39,21 +37,6 @@ public class Scr_PlayerAnimations : MonoBehaviour
         {
             animator.SetBool(Animation, false);
         }
-    }
-
-    public void CanMove()
-    {
-        scriptMove.canMove = true;
-    }
-
-    public void CantMove()
-    {
-        scriptMove.canMove = false;
-    }
-
-    public void JumpEvent()
-    {
-        scriptMove.JumpFunction();
     }
 
 }

@@ -2,100 +2,126 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
 
 public class Scr_PlayerMove : MonoBehaviour
 {
-    //Inputs
+    [Header("Estado")]
+    public bool canMove = true;
+    public bool isRunning = false;
+
     [Header("Inputs")]
     public InputActionAsset inputActions;
+    public Vector2 stickInput;
+    public string stickDirection;
+    public float stickThreshold = 0.5f;
 
-    //Ground Check
-    [Header("Detección de Superficies")]
-    public BoxCollider groundDetection;
-    public LayerMask groundLayer;
-
-    //Movimiento
-    private InputAction moveAction;
-    [HideInInspector] public Rigidbody rigidBody;
     [Header("Movimiento")]
-    public Vector3 currentMovement;
-    public float moveSpeed;
-
-    //Salto
-    private InputAction jumpAction;
-    [Header("Salto")]
-    public float jumpForce;
-    public bool jumpBool;
-
-    [Header("Estado")] //New
-    public bool canMove;
+    public float walkSpeed = 3.0f;
+    public float runSpeed = 6.0f;
+    [HideInInspector] public InputAction moveAction;
+    [HideInInspector] public Rigidbody rigidBody;
+    private Transform cameraTransform;
 
     private void Awake()
     {
-        //Componentes
+        // Inicializar componentes
         rigidBody = GetComponent<Rigidbody>();
-
-        //Inputs
         var actionMap = inputActions.FindActionMap("NormalActions");
         moveAction = actionMap.FindAction("Movement");
-        jumpAction = actionMap.FindAction("Jump");
+        cameraTransform = GameObject.Find("VirtulCamara").transform;
     }
 
     private void Start()
     {
-
         canMove = true;
     }
+
     private void FixedUpdate()
     {
         if (canMove)
         {
-            StickMovement();
-
-            InputActionBool(jumpAction, value => jumpBool = value);
+            HandleMovement();
         }
     }
 
-    public bool IsGrounded() //Ground Check
+    private void HandleMovement()
     {
-        return Physics.Raycast(groundDetection.bounds.center, Vector3.down,
-            groundDetection.bounds.extents.y + 0.1f, groundLayer);
-    }
+        stickInput = moveAction.ReadValue<Vector2>();
 
-    private void InputActionBool(InputAction inputAction, System.Action<bool> boolAction)
-    {
-        inputAction.performed += ctx => boolAction(true);
-        inputAction.canceled += ctx => boolAction(false);
-    }
-
-    public void JumpFunction()
-    {
-        if (IsGrounded())
+        if (stickInput == Vector2.zero)
         {
-            rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isRunning = false;
+            return;
         }
+
+        Vector3 moveDirection = CalculateMoveDirection(stickInput);
+
+        float speed = isRunning ? runSpeed : walkSpeed;
+        Vector3 movement = moveDirection * speed * Time.fixedDeltaTime;
+
+        rigidBody.MovePosition(rigidBody.position + movement);
+
+        RotateTowardsMovementDirection(moveDirection);
+
+        DetermineStickState(stickInput);
     }
 
-    private void StickMovement() //Movimiento con Stick
+    private Vector3 CalculateMoveDirection(Vector2 stickInput)
     {
-        Vector2 stickInput = moveAction.ReadValue<Vector2>();
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
 
-        if (IsGrounded())
-        {
-            currentMovement = new Vector3(stickInput.x, 0, stickInput.y) * moveSpeed * Time.fixedDeltaTime;
-            rigidBody.MovePosition(rigidBody.position + currentMovement);
+        forward.y = 0;
+        right.y = 0;
 
-            if (stickInput != Vector2.zero)
-            {
-                Quaternion targetRotation = Quaternion.LookRotation(new Vector3(stickInput.x, 0, stickInput.y));
-                rigidBody.MoveRotation(Quaternion.Slerp(rigidBody.rotation, targetRotation, Time.fixedDeltaTime * 10f));
-            }
-        }
-        else
+        return (stickInput.x * right + stickInput.y * forward).normalized;
+    }
+
+    private void RotateTowardsMovementDirection(Vector3 moveDirection)
+    {
+        if (moveDirection != Vector3.zero)
         {
-            rigidBody.MovePosition(rigidBody.position + currentMovement);
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            rigidBody.MoveRotation(Quaternion.Slerp(rigidBody.rotation, targetRotation, Time.fixedDeltaTime * 10f));
         }
     }
 
+    private void DetermineStickState(Vector2 stickInput)
+    {
+        float angle = Mathf.Atan2(stickInput.y, stickInput.x) * Mathf.Rad2Deg;
+        if (angle < 0) angle += 360f;
+
+        float magnitude = stickInput.magnitude;
+
+        // Determinar dirección del stick
+        string direction = GetStickDirection(angle);
+
+        // Determinar zona del stick
+        string zone = magnitude < stickThreshold ? "Círculo Interno" : "Círculo Externo";
+        isRunning = magnitude >= stickThreshold;
+
+        Debug.Log($"Dirección del stick: {direction} en {zone}");
+    }
+
+    public string GetStickDirection(float angle)
+    {
+        if (angle >= 67.5f && angle < 112.5f)
+            stickDirection = "Arriba";
+        else if (angle >= 112.5f && angle < 157.5f)
+            stickDirection = "Izquierda Diagonal Arriba";
+        else if (angle >= 157.5f && angle < 202.5f)
+            stickDirection = "Izquierda";
+        else if (angle >= 202.5f && angle < 247.5f)
+            stickDirection = "Izquierda Diagonal Abajo";
+        else if (angle >= 247.5f && angle < 292.5f)
+            stickDirection = "Abajo";
+        else if (angle >= 292.5f && angle < 337.5f)
+            stickDirection = "Derecha Diagonal Abajo";
+        else if (angle >= 337.5f || angle < 22.5f)
+            stickDirection = "Derecha";
+        else if (angle >= 22.5f && angle < 67.5f)
+            stickDirection = "Derecha Diagonal Arriba";
+
+        return stickDirection;
+    }
 }

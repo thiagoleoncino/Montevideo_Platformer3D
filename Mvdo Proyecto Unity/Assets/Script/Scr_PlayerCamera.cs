@@ -5,21 +5,58 @@ using UnityEngine.InputSystem;
 
 public class Scr_PlayerCamera : MonoBehaviour
 {
-    public Transform objetivo; // El objeto a seguir
-    public float velocidad = 5f; // Velocidad de seguimiento
-    public float distanciaMinima = 0.1f; // Distancia mínima al objetivo para dejar de moverse
+    private Scr_PlayerMove scriptMove;
+    public Transform camara;
 
-    void LateUpdate()
+    public float rotationSpeed = 100f; 
+
+    private void Awake()
     {
-        if (objetivo != null)
-        {
-            float distancia = Vector3.Distance(transform.position, objetivo.position);
+        scriptMove = GetComponentInParent<Scr_PlayerMove>();
+    }
 
-            if (distancia > distanciaMinima)
+    private void Update()
+    {
+        Vector2 stickInput = scriptMove.moveAction.ReadValue<Vector2>();
+
+        float rotationAmount = 0f;
+
+        if (scriptMove.isRunning)
+        {
+            if (scriptMove.stickDirection == "Izquierda")
             {
-                transform.position = Vector3.MoveTowards(transform.position, objetivo.position, velocidad * Time.deltaTime);
+                rotationAmount = -rotationSpeed * Time.deltaTime;
+            }
+            if (scriptMove.stickDirection == "Izquierda Diagonal Arriba" || scriptMove.stickDirection == "Izquierda Diagonal Abajo")
+            {
+                rotationAmount = (-rotationSpeed * Time.deltaTime) / 2;
+            }
+
+            if (scriptMove.stickDirection == "Derecha")
+            {
+                rotationAmount = rotationSpeed * Time.deltaTime;
+            }
+            if (scriptMove.stickDirection == "Derecha Diagonal Arriba" || scriptMove.stickDirection == "Derecha Diagonal Abajo")
+            {
+                rotationAmount = (rotationSpeed * Time.deltaTime) / 2;
+            }
+
+            if (rotationAmount != 0f)
+            {
+                RotateCamera(rotationAmount);
             }
         }
     }
 
+    private void RotateCamera(float rotationAmount)
+    {
+        // Obtener los ángulos de Euler actuales
+        Vector3 currentRotation = camara.eulerAngles;
+
+        // Modificar solo el eje Y
+        currentRotation.y += rotationAmount;
+
+        // Aplicar la nueva rotación
+        camara.eulerAngles = currentRotation;
+    }
 }
