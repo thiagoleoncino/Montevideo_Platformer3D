@@ -5,90 +5,96 @@ using UnityEngine.InputSystem;
 
 public class Scr_PlayerCamera : MonoBehaviour
 {
+    private Transform cameraTransform;
+    private Transform playerTransform;
     private Scr_PlayerMove scriptMove;
-    public Transform camaraTransform;
-    public Transform playerTransform;
+    private Scr_PlayerInputs scriptInputs;
 
+    [Header("Ajustes de Rotacion de Camara")]
     public float rotationSpeed = 100f;
-    public float smoothTransitionSpeed = 2f; // Velocidad de la transición suave
+    public float smoothTransitionSpeed = 2f;
 
+    private float currentRotationSpeed = 0f;
     private InputAction rightTrigger;
-    private bool isResettingCamera = false; // Variable para saber si estamos en la transición
-    private Quaternion targetRotation; // La rotación objetivo
+    private bool isResettingCamera = false;
+    private Quaternion targetRotation;
 
     private void Awake()
     {
+        cameraTransform = GameObject.Find("VirtulCamara").transform;
+        playerTransform = GetComponentInParent<Transform>();
         scriptMove = GetComponentInParent<Scr_PlayerMove>();
-        var actionMap = scriptMove.inputActions.FindActionMap("NormalActions");
+        scriptInputs = GetComponentInParent<Scr_PlayerInputs>();
+
+        var actionMap = scriptInputs.inputActions.FindActionMap("NormalActions");
         rightTrigger = actionMap.FindAction("ResetCamera");
 
-        // Suscribirse al evento para detectar cuando se presiona el botón
-        rightTrigger.performed += ctx => StartResetCameraRotation();
+        // Suscribirse al evento de reseteo de cámara
+        rightTrigger.performed += _ => StartResetCameraRotation();
     }
 
     private void Update()
     {
-        Vector2 stickInput = scriptMove.moveAction.ReadValue<Vector2>();
-
         if (isResettingCamera)
         {
-            // Interpolación suave hacia la rotación objetivo
-            camaraTransform.rotation = Quaternion.Slerp(camaraTransform.rotation, targetRotation, smoothTransitionSpeed * Time.deltaTime);
-
-            // Comprobar si la rotación ha llegado a la rotación objetivo
-            if (Quaternion.Angle(camaraTransform.rotation, targetRotation) < 0.1f)
-            {
-                isResettingCamera = false; // Finaliza la transición
-            }
+            SmoothResetCameraRotation();
         }
-        else
+        else if (scriptMove.isRunning)
         {
-            float rotationAmount = 0f;
+            HandleCameraRotation();
+        }
+    }
 
-            if (scriptMove.isRunning)
-            {
-                if (scriptMove.stickDirection == "Izquierda")
-                {
-                    rotationAmount = -rotationSpeed * Time.deltaTime;
-                }
-                if (scriptMove.stickDirection == "Izquierda Diagonal Arriba" || scriptMove.stickDirection == "Izquierda Diagonal Abajo")
-                {
-                    rotationAmount = (-rotationSpeed * Time.deltaTime) / 2;
-                }
+    private void SmoothResetCameraRotation()
+    {
+        // Interpolación suave hacia la rotación objetivo
+        cameraTransform.rotation = Quaternion.Slerp(cameraTransform.rotation, targetRotation, smoothTransitionSpeed * Time.deltaTime);
 
-                if (scriptMove.stickDirection == "Derecha")
-                {
-                    rotationAmount = rotationSpeed * Time.deltaTime;
-                }
-                if (scriptMove.stickDirection == "Derecha Diagonal Arriba" || scriptMove.stickDirection == "Derecha Diagonal Abajo")
-                {
-                    rotationAmount = (rotationSpeed * Time.deltaTime) / 2;
-                }
+        // Finaliza la transición cuando se alcanza la rotación objetivo
+        if (Quaternion.Angle(cameraTransform.rotation, targetRotation) < 0.1f)
+        {
+            isResettingCamera = false;
+        }
+    }
 
-                if (rotationAmount != 0f)
-                {
-                    RotateCamera(rotationAmount);
-                }
-            }
+    private void HandleCameraRotation()
+    {
+        float targetRotationSpeed = DetermineTargetRotationSpeed();
+        currentRotationSpeed = Mathf.Lerp(currentRotationSpeed, targetRotationSpeed, smoothTransitionSpeed * Time.deltaTime);
+
+        if (!Mathf.Approximately(currentRotationSpeed, 0f))
+        {
+            RotateCamera(currentRotationSpeed * Time.deltaTime);
+        }
+    }
+
+    private float DetermineTargetRotationSpeed()
+    {
+        switch (scriptInputs.stickDirection)
+        {
+            case "Izquierda":
+                return -rotationSpeed;
+            case "Izquierda Diagonal Arriba":
+            case "Izquierda Diagonal Abajo":
+                return -rotationSpeed / 2;
+            case "Derecha":
+                return rotationSpeed;
+            case "Derecha Diagonal Arriba":
+            case "Derecha Diagonal Abajo":
+                return rotationSpeed / 2;
+            default:
+                return 0f;
         }
     }
 
     private void RotateCamera(float rotationAmount)
     {
-        // Obtener la rotación actual de la cámara
-        Quaternion currentRotation = camaraTransform.rotation;
-
-        // Calcular la nueva rotación aplicando el giro en el eje Y
-        Quaternion newRotation = Quaternion.Euler(0f, currentRotation.eulerAngles.y + rotationAmount, 0f);
-
-        // Aplicar la nueva rotación
-        camaraTransform.rotation = newRotation;
+        cameraTransform.rotation *= Quaternion.Euler(0f, rotationAmount, 0f);
     }
 
     private void StartResetCameraRotation()
     {
-        // Calcular la rotación objetivo basada en la rotación del playerTransform
         targetRotation = Quaternion.Euler(0f, playerTransform.eulerAngles.y, 0f);
-        isResettingCamera = true; // Iniciar la transición suave
+        isResettingCamera = true;
     }
 }

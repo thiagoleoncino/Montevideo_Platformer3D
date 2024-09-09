@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Scr_PlayerMove : MonoBehaviour
 {
@@ -9,27 +8,27 @@ public class Scr_PlayerMove : MonoBehaviour
     public bool canMove = true;
     public bool isRunning = false;
 
-    [Header("Inputs")]
-    public InputActionAsset inputActions;
-    public Vector2 stickInput;
-    public string stickDirection;
-    public float stickThreshold = 0.5f;
-
     [Header("Movimiento")]
-    public float walkSpeed = 3.0f;
-    public float runSpeed = 6.0f;
-    [HideInInspector] public InputAction moveAction;
+    public float walkSpeed;
+    public float runSpeed;
+    public float crouchSpeed;
     [HideInInspector] public Rigidbody rigidBody;
     private Transform cameraTransform;
+
+    private Vector2 currentStickInput;
+    private string currentStickDirection;
+    private Scr_PlayerInputs playerInputs;  // Asegúrate de asignar esta referencia en el Inspector
+    private Scr_PlayerAnimations playerAnimations;
+    private Scr_PlayerActions playerActions; //NEW
 
     private void Awake()
     {
         // Inicializar componentes
         rigidBody = GetComponent<Rigidbody>();
-        var actionMap = inputActions.FindActionMap("NormalActions");
-        moveAction = actionMap.FindAction("Movement");
         cameraTransform = GameObject.Find("VirtulCamara").transform;
-    }
+        playerInputs = GetComponent<Scr_PlayerInputs>(); //NEW
+        playerActions = GetComponent<Scr_PlayerActions>(); //NEW
+    } 
 
     private void Start()
     {
@@ -42,28 +41,34 @@ public class Scr_PlayerMove : MonoBehaviour
         {
             HandleMovement();
         }
+
+        BlockMotion(playerActions.IsAttacking);
+    }
+
+    public void UpdateMovementInput(Vector2 stickInput, string stickDirection)
+    {
+        currentStickInput = stickInput;
+        currentStickDirection = stickDirection;
     }
 
     private void HandleMovement()
     {
-        stickInput = moveAction.ReadValue<Vector2>();
-
-        if (stickInput == Vector2.zero)
+        if (currentStickInput == Vector2.zero)
         {
             isRunning = false;
             return;
         }
 
-        Vector3 moveDirection = CalculateMoveDirection(stickInput);
+        Vector3 moveDirection = CalculateMoveDirection(currentStickInput);
 
-        float speed = isRunning ? runSpeed : walkSpeed;
+        // Determina la velocidad en función del estado de boolCrouch NEW
+        float speed = playerInputs.InputLeftShoulder ? crouchSpeed : (isRunning ? runSpeed : walkSpeed); 
+
         Vector3 movement = moveDirection * speed * Time.fixedDeltaTime;
 
         rigidBody.MovePosition(rigidBody.position + movement);
 
         RotateTowardsMovementDirection(moveDirection);
-
-        DetermineStickState(stickInput);
     }
 
     private Vector3 CalculateMoveDirection(Vector2 stickInput)
@@ -86,42 +91,16 @@ public class Scr_PlayerMove : MonoBehaviour
         }
     }
 
-    private void DetermineStickState(Vector2 stickInput)
+    private void BlockMotion(bool InputBool)
     {
-        float angle = Mathf.Atan2(stickInput.y, stickInput.x) * Mathf.Rad2Deg;
-        if (angle < 0) angle += 360f;
+        if(InputBool)
+        {
+            canMove = false;
+        }
 
-        float magnitude = stickInput.magnitude;
-
-        // Determinar dirección del stick
-        string direction = GetStickDirection(angle);
-
-        // Determinar zona del stick
-        string zone = magnitude < stickThreshold ? "Círculo Interno" : "Círculo Externo";
-        isRunning = magnitude >= stickThreshold;
-
-        Debug.Log($"Dirección del stick: {direction} en {zone}");
-    }
-
-    public string GetStickDirection(float angle)
-    {
-        if (angle >= 67.5f && angle < 112.5f)
-            stickDirection = "Arriba";
-        else if (angle >= 112.5f && angle < 157.5f)
-            stickDirection = "Izquierda Diagonal Arriba";
-        else if (angle >= 157.5f && angle < 202.5f)
-            stickDirection = "Izquierda";
-        else if (angle >= 202.5f && angle < 247.5f)
-            stickDirection = "Izquierda Diagonal Abajo";
-        else if (angle >= 247.5f && angle < 292.5f)
-            stickDirection = "Abajo";
-        else if (angle >= 292.5f && angle < 337.5f)
-            stickDirection = "Derecha Diagonal Abajo";
-        else if (angle >= 337.5f || angle < 22.5f)
-            stickDirection = "Derecha";
-        else if (angle >= 22.5f && angle < 67.5f)
-            stickDirection = "Derecha Diagonal Arriba";
-
-        return stickDirection;
+        if (!InputBool)
+        {
+            canMove = true;
+        }
     }
 }
