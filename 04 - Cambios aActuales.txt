@@ -13,6 +13,6 @@ Queda:
 - Actualizar Code Document scr_PlayerMove y scr_PlayerInput
 - Actualizar el script para que no se mueva la camara al estar agachado
 - Agregar mas animciones de transicion entre movimientos
-- Agregar Ataque 1 y Ataque 2, hacer un combo en rapida repeticion
-
+- Agregar Ataque 1 y Ataque 2
+- Integrar blend trees
 
