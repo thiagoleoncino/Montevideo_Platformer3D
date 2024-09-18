@@ -1074,7 +1074,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualAction: 
   playerCanMove: 0
-  playerIsBraking: 0
   playerIsMoving: 0
 --- !u!114 &2447887527254717554
 MonoBehaviour:
@@ -1085,10 +1084,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8464542301083081655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf32a7a8a26f0004f9d08745fa30a139, type: 3}
+  m_Script: {fileID: 11500000, guid: fa02f5251ba6dbf45bc8f2ce091fa8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2
+  walkSpeed: 2.5
   acceleration: 4
   deceleration: 9
   turnResistance: 5
