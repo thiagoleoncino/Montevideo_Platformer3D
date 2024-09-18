@@ -1,18 +1,8 @@
 06-09-24
-- Actualizar Code Document Camara
-- Separar scr_PlayerMove en dos scr_PlayerMove y scr_PlayerInput
-- Agregar Animacion de Coruhc y bool IsCrouching
-- Agregar Coruch en Scr_PlayerMove
-- Agregar Crouch Movimiento.
-- Agregando Golpe y animaciones
-- Agregando bloqueo de movimiento en ciertas acciones
-- Agregando Scr_PlayerAction
-- Cambiando Modelo y Animaciones
+- Cambie todo
+
 
 Queda:
-- Actualizar Code Document scr_PlayerMove y scr_PlayerInput
-- Actualizar el script para que no se mueva la camara al estar agachado
-- Agregar mas animciones de transicion entre movimientos
-- Agregar Ataque 1 y Ataque 2
-- Integrar blend trees
+- Actualizar Code Document Scr Animations y Scr Camera
+
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028554, g: 0.22571614, b: 0.30692446, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757991, g: 0.22232364, b: 0.30451986, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -276,14 +276,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.29883623, y: -0.64085644, z: 0.29883623, w: 0.64085644}
+  m_LocalRotation: {x: 0.3535534, y: 0.61237246, z: -0.3535534, w: 0.61237246}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 50, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 90, z: 0}
 --- !u!1 &726762020
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,73 +512,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 975760366085673041, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1963445677875202009, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669877658846298297, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2893206532095926213, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2941945774098783095, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 91930fdaac4aace43ac69d60bb139b54, type: 3}
-    - target: {fileID: 2941945774098783095, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4039733532390249659, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5701437968642103535, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7644902621951511807, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.042778905
-      objectReference: {fileID: 0}
-    - target: {fileID: 7644902621951511807, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.687539e-14
-      objectReference: {fileID: 0}
-    - target: {fileID: 7644902621951511807, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99278545
-      objectReference: {fileID: 0}
-    - target: {fileID: 7644902621951511807, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.027784588
-      objectReference: {fileID: 0}
-    - target: {fileID: 7644902621951511807, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.10541439
-      objectReference: {fileID: 0}
-    - target: {fileID: 7644902621951511807, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.049929064
+    - target: {fileID: 2447887527254717554, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
+      propertyPath: walkSpeed
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8464542301083081655, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_Name
       value: Obj_Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8464542301083081655, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818424027897900757, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9093832853923512589, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_RootOrder

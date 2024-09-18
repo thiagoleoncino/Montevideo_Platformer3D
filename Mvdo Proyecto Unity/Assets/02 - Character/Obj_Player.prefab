@@ -41,9 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1068536990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e1346e6709fb074fb4f9cbe4f3f113f, type: 3}
+  m_Script: {fileID: 11500000, guid: ede5b9a63de2f6a4c892e1eaaa959c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFollowingPlayer: 0
+  isResettingCameraRotation: 0
   rotationSpeed: 70
   smoothTransitionSpeed: 2.5
 --- !u!1 &273945376563843461
@@ -841,9 +843,11 @@ GameObject:
   - component: {fileID: 4923968981532983799}
   - component: {fileID: 2941945774098783095}
   - component: {fileID: 7727418562547462710}
+  - component: {fileID: 2023047668564889251}
   - component: {fileID: 44449137930582380}
-  - component: {fileID: 8771166758336609517}
+  - component: {fileID: 2447887527254717554}
   - component: {fileID: 1560882516564193816}
+  - component: {fileID: 8771166758336609517}
   m_Layer: 0
   m_Name: Obj_Player
   m_TagString: Player
@@ -960,46 +964,102 @@ MonoBehaviour:
   m_GameObject: {fileID: 8464542301083081655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 058908e081217b74ca80262a7c9a763e, type: 3}
+  m_Script: {fileID: 11500000, guid: c5958ce1b6f3a2348a363cc248b63be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputActions: {fileID: -944628639613478452, guid: 44ca0145caa114e4490da134b1eb6b49, type: 3}
+  inputActionStickIzquierdo:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a3bcbb36-6fa2-49d1-90e8-569dcf14534a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  inputActionButton1:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5cb1b0ed-1e9f-405e-99ee-e6ce2bf6b27c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  inputActionButton2:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: dfa6a3e2-449e-4101-8d31-a75c849728f9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  inputActionButton3:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c94b1a7d-9a2a-495a-bc7e-082570c102d4
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  inputActionButton4:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 220deb45-1135-4a3b-8792-6788313efaa2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  inputActionL1:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 26472b89-dc76-4544-abb4-c4b961c8393f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  inputActionR1:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9a3f33f2-90a9-4be3-9aa8-95c46513d192
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   stickInput: {x: 0, y: 0}
   stickDirection: 
+  stickMagnitude: 0
   stickThreshold: 0.9
-  moveAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 44bc38c8-80de-483f-9095-201ead538a82
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  crouchAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 8831c9e4-7b69-44b3-9069-c87db2d01866
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  attackAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 71e8a12e-73d7-40fe-bef2-31eae21d8111
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   inputButton1: 0
   inputButton2: 0
   inputButton3: 0
   inputButton4: 0
-  InputLeftShoulder: 0
-  InputRightShoulder: 0
+  InputLeftShoulder1: 0
+  InputLeftShoulder2: 0
+  InputRightShoulder1: 0
+  InputRightShoulder2: 0
+  inputButtonStart: 0
+  inputButtonSelect: 0
+--- !u!114 &2023047668564889251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8464542301083081655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e843067969af00c49a81c37aec40129b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentActionState: 0
+  currentSurfaceState: 0
+  currentMoveState: 0
 --- !u!114 &44449137930582380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,11 +1069,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 8464542301083081655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7b09c4c7128dd845b3c07860dbf3f99, type: 3}
+  m_Script: {fileID: 11500000, guid: 64d64b0621db80844a37cd7e51ce4637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   actualAction: 
-  IsAttacking: 0
+  playerCanMove: 0
+  playerIsBraking: 0
+  playerIsMoving: 0
+--- !u!114 &2447887527254717554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8464542301083081655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf32a7a8a26f0004f9d08745fa30a139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 2
+  acceleration: 4
+  deceleration: 9
+  turnResistance: 5
+--- !u!114 &1560882516564193816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8464542301083081655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fe1fd90b9697d4d98cfebae640bd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBody: {fileID: 0}
 --- !u!114 &8771166758336609517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,24 +1117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b07a52e670204741a15c66c4c18fc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1560882516564193816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8464542301083081655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4f7c13a361455343843988a3bdb714a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canMove: 0
-  isRunning: 0
-  walkSpeed: 1.5
-  runSpeed: 3
-  crouchSpeed: 0.5
-  rigidBody: {fileID: 0}
 --- !u!1 &8677682225083568153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1314,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9093832853923512589}
     m_Modifications:
+    - target: {fileID: 840614837912024988, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.042778905
+      objectReference: {fileID: 0}
+    - target: {fileID: 840614837912024988, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.687539e-14
+      objectReference: {fileID: 0}
+    - target: {fileID: 840614837912024988, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9943598
+      objectReference: {fileID: 0}
+    - target: {fileID: 840614837912024988, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.080100395
+      objectReference: {fileID: 0}
+    - target: {fileID: 840614837912024988, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.03514172
+      objectReference: {fileID: 0}
+    - target: {fileID: 840614837912024988, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.059979886
+      objectReference: {fileID: 0}
     - target: {fileID: 4557834185776835037, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
       propertyPath: m_Enabled
       value: 0

@@ -6,7 +6,7 @@
             "id": "9ecfab03-487e-40fd-814e-28c6c979391a",
             "actions": [
                 {
-                    "name": "Movement",
+                    "name": "LeftStick",
                     "type": "Value",
                     "id": "69d4dcdf-ad5c-492f-9885-9acc82e0076c",
                     "expectedControlType": "Stick",
@@ -15,27 +15,54 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "ResetCamera",
+                    "name": "Button 1",
                     "type": "Button",
-                    "id": "43b86ef4-96c2-42c6-9bee-a983c5983e1d",
+                    "id": "88146cbf-74bd-4345-86bf-c68b7f52089c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Crouch",
-                    "type": "Button",
-                    "id": "bc1a685f-6b72-41e9-b412-162bd40622ed",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Attack",
+                    "name": "Button 2",
                     "type": "Button",
                     "id": "386ef910-5bfe-463f-933b-a7e6a9de6996",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Button 3",
+                    "type": "Button",
+                    "id": "aea00d9a-8924-4de6-8261-3d0c57635ec9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Button 4",
+                    "type": "Button",
+                    "id": "44a27982-2663-4787-bc38-6a27e44a29da",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "L1",
+                    "type": "Button",
+                    "id": "42b03d68-8014-4d28-b66d-8fb8d87d97cb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "R1",
+                    "type": "Button",
+                    "id": "43b86ef4-96c2-42c6-9bee-a983c5983e1d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -50,7 +77,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "LeftStick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -61,18 +88,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ResetCamera",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "88dd739e-5f23-47d2-bce0-a60f70254b3c",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
+                    "action": "R1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -83,7 +99,51 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "Button 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0b371ec5-a8a4-40bf-8e59-757e23697f13",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Button 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c4d65ce-dd22-4cb0-a0cc-a545e31cf7dd",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Button 3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "66cdecc7-9094-4ef7-81e7-4ac211f78721",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Button 4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "979f8db3-5207-4b27-ab41-a6295ecb385b",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "L1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
