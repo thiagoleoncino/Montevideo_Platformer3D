@@ -13,6 +13,7 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 
     [Header("Actions the player can do")]
     public bool playerCanMove = false;
+    public bool playerCanCombo = false;
 
     [Header("Actions the player is doing")]
     public bool playerIsMoving;
@@ -132,9 +133,18 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 
     public void HandleAttackGroundedActions() //NEW
     {
-        if (playerInputs.inputButton2)
+        if (!playerIsAttacking && !playerCanCombo && playerInputs.inputButton2)
         {
             actualAction = "Attack1";
+            playerIsMoving = false;
+            playerIsAttacking = true;
+            playerState.objectCantMove = true;
+            playerState.cancelableAction = true;
+        }
+
+        if (playerCanCombo && playerInputs.inputButton2)
+        {
+            actualAction = "Attack2";
             playerIsMoving = false;
             playerIsAttacking = true;
             playerState.objectCantMove = true;

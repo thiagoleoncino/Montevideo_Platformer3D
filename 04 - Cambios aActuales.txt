@@ -1,6 +1,7 @@
 06-09-24
 - Agregue Break (Animacion y funcion)
 - Agregue Crouch (Animacion, Funcion, Movimiento, Camara)
+- Agregue Golpe 1 y 2 (Animacion y Funcion)
 
 Queda:
 - Actualizar Code Document Scr Animations

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Scr_Prueba : StateMachineBehaviour
+public class ScrPlayer08BackToIdle : StateMachineBehaviour
 {
     // Este método se ejecuta cuando la transición desde el estado actual ha terminado.
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -8,4 +8,3 @@ public class Scr_Prueba : StateMachineBehaviour
         animator.SetBool("BackToIdle", false);
     }
 }
-
