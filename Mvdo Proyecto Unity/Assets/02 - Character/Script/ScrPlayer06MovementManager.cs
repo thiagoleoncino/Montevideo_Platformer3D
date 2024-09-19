@@ -6,8 +6,9 @@ public class ScrPlayer06MovementManager : MonoBehaviour
 {
     // Referencias a otros scripts
     private ScrPlayer01ControlManager playerInputs;
-    private ScrPlayer05StatsManager playerStats;
     private ScrPlayer03ActionManager playerActions;
+    private ScrPlayer05StatsManager playerStats;
+
 
     [HideInInspector] public Rigidbody rigidBody;
     private Transform cameraTransform;
@@ -40,22 +41,34 @@ public class ScrPlayer06MovementManager : MonoBehaviour
 
         if (stickInput == Vector2.zero)
         {
-            ApplyDeceleration();
+            if (!playerActions.playerIsCrouching)
+            {
+                ApplyDeceleration();
+            }
             return;
         }
-        
+
         Vector3 moveDirection = CalculateMoveDirection(stickInput);
+        float targetSpeed;
 
-        float magnitude = stickInput.magnitude;
-        float targetSpeed = Mathf.Lerp(0, playerStats.walkSpeed, magnitude);
+        if (playerActions.playerIsCrouching) // Si el personaje está agachado, usar crouchSpeed y no aplicara aceleración/desaceleración
+        {
+            targetSpeed = playerStats.crouchSpeed;
+            currentVelocity = moveDirection * targetSpeed;
+        }
 
-        currentVelocity = Vector3.Lerp(currentVelocity, moveDirection * targetSpeed, Time.fixedDeltaTime * playerStats.acceleration);
+        if (playerActions.playerIsStanding) // Si el personaje está parado, usar walkSpeed y si aplicara aceleración/desaceleración
+        {
+            float magnitude = stickInput.magnitude;
+            targetSpeed = Mathf.Lerp(0, playerStats.walkSpeed, magnitude);
+            currentVelocity = Vector3.Lerp(currentVelocity, moveDirection * targetSpeed, Time.fixedDeltaTime * playerStats.acceleration);
+        }
 
         Vector3 movement = currentVelocity * Time.fixedDeltaTime;
         rigidBody.MovePosition(rigidBody.position + movement);
 
         RotateTowardsMovementDirection(moveDirection);
-    }
+    } //NEW
 
     private Vector3 CalculateMoveDirection(Vector2 stickInput)
     {

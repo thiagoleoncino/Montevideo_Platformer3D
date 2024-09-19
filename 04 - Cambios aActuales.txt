@@ -1,8 +1,8 @@
 06-09-24
-- Cambie todo
-
+- Agregue Break (Animacion y funcion)
+- Agregue Crouch (Animacion, Funcion, Movimiento, Camara)
 
 Queda:
-- Actualizar Code Document Scr Animations y Scr Camera
+- Actualizar Code Document Scr Animations
 
 

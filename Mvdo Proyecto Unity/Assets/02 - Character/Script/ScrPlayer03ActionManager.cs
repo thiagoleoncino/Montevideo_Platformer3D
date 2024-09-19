@@ -16,6 +16,10 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 
     [Header("Actions the player is doing")]
     public bool playerIsMoving;
+    public bool playerIsBreaking;
+    public bool playerIsStanding;
+    public bool playerIsCrouching;
+    public bool playerIsAttacking;
 
     private void Awake()
     {
@@ -30,18 +34,13 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 
         if(playerState.passiveAction || playerState.cancelableAction) //Si se esta en una accion Pasiva o Cancelable
         {
-            if(playerState.groundedAction) //Es en Tierra
+            if(playerState.groundedAction) //Esta en Tierra
             {
-                if(playerState.objectCanMove) //Si el jugador puede moverse
+                if (playerState.objectCanMove) //Si el jugador puede moverse
                 {
-                    playerCanMove = true;
+                    HandleGroundedMovementActions();
 
-                    IdleWalkRunActions();
-                }
-                else
-                {
-                    playerCanMove = false;
-                    playerIsMoving = false;
+                    HandleAttackGroundedActions();
                 }
             }
         }
@@ -66,27 +65,80 @@ public class ScrPlayer03ActionManager : MonoBehaviour
         }
     }
 
-    public void IdleWalkRunActions()
+    public void HandleGroundedMovementActions()
     {
-        if (playerInputs.stickMagnitude == 0)
+        if(playerInputs.InputLeftShoulder1) //NEW
         {
-            actualAction = "Idle";
+            playerIsStanding = false;
+            playerIsCrouching = true;
+        } 
+        else { 
+            playerIsCrouching = false;
+            playerIsStanding = true;
+        }
+
+        if(playerIsStanding) 
+        {
+            if (playerInputs.stickMagnitude == 0)
+            {
+                actualAction = "Idle";
+                playerIsMoving = false;
+                playerState.passiveAction = true;
+            }
+
+            if (playerInputs.stickMagnitude > 0.1 && playerInputs.stickMagnitude < playerInputs.stickThreshold)
+            {
+                actualAction = "NormalWalk";
+                playerIsMoving = true;
+                playerState.cancelableAction = true;
+            }
+
+            if (playerInputs.stickMagnitude > playerInputs.stickThreshold)
+            {
+                actualAction = "FastWalk";
+                playerIsMoving = true;
+                playerState.cancelableAction = true;
+
+                if (playerInputs.inputButton4) //NEW
+                {
+                    actualAction = "GroundBreak";
+
+                    playerIsBreaking = true;
+                    playerIsMoving = false;
+
+                    playerState.noCancelableAction = true;
+                    playerState.objectCantMove = true;
+                }
+            }
+        } //Si el jugador esta Parado
+
+        if (playerIsCrouching) 
+        {
+            if (playerInputs.stickMagnitude == 0)
+            {
+                actualAction = "CrouchIdle";
+                playerIsMoving = false;
+                playerState.passiveAction = true;
+            }
+
+            if (playerInputs.stickMagnitude > 0.1)
+            {
+                actualAction = "CrouchWalk";
+                playerIsMoving = true;
+                playerState.cancelableAction = true;
+            }
+        } //Si el jugador esta Agachado
+    }
+
+    public void HandleAttackGroundedActions() //NEW
+    {
+        if (playerInputs.inputButton2)
+        {
+            actualAction = "Attack1";
             playerIsMoving = false;
-            playerState.passiveAction = true;
-        }
-
-        if (playerInputs.stickMagnitude > 0.1 && playerInputs.stickMagnitude < playerInputs.stickThreshold)
-        {
-            actualAction = "NormalWalk";
-            playerIsMoving = true;
-            playerState.cancelableAction = true;
-        }
-
-        if (playerInputs.stickMagnitude > playerInputs.stickThreshold)
-        {
-            actualAction = "FastWalk";
-            playerIsMoving = true;
-            playerState.cancelableAction = true;
+            playerIsAttacking = true;
+            playerState.objectCantMove = true;
+            playerState.noCancelableAction = true;
         }
     }
 }

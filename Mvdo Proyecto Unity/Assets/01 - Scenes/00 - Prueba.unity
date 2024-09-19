@@ -512,9 +512,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2447887527254717554, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-      propertyPath: walkSpeed
-      value: 2.5
+    - target: {fileID: 7644902621951511807, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9942762
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644902621951511807, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.06728603
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644902621951511807, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.039184712
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644902621951511807, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07315788
       objectReference: {fileID: 0}
     - target: {fileID: 8464542301083081655, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_Name

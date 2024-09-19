@@ -43,12 +43,16 @@ public class ScrPlayer04CameraManager : MonoBehaviour
             SmoothResetCameraRotation();
         }
 
-        if (playerActions.playerIsMoving)
+        if (playerActions.playerIsStanding) //NEW
         {
-            HandleCameraRotation();
-            isFollowingPlayer = true;
+            if (playerActions.playerIsMoving)
+            {
+                HandleCameraRotation();
+                isFollowingPlayer = true;
+            }
+            else { isFollowingPlayer = false; }
         }
-        else { isFollowingPlayer = false; }
+
     }
     private void StartResetCamera()
     {
