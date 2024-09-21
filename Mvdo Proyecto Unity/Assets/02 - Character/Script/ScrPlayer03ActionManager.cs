@@ -47,6 +47,8 @@ public class ScrPlayer03ActionManager : MonoBehaviour
                 HandleGroundedAttackActions();
             }
         }
+
+        HandleJumpActions();
     }
 
     private void HandleMoveStates()
@@ -152,10 +154,17 @@ public class ScrPlayer03ActionManager : MonoBehaviour
     {
         if (playerState.groundedAction && playerInputs.inputButton1)
         {
+            playerMove.HandleVerticalMovement();
             currentAction = ActionState.NeutralJump;
             playerIsMoving = true;
             playerIsJumping = true;
             playerState.cancelableAction = true;
+            playerState.objectCantMove= true;
         }
+    }
+
+    public void AirbornMovementActions()
+    {
+
     }
 }

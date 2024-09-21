@@ -143,7 +143,7 @@ public class ScrPlayer01ControlManager : MonoBehaviour
                 (previousStickDirection == "Izquierda" && stickDirection == "Derecha") ||
                 (previousStickDirection == "Derecha" && stickDirection == "Izquierda"))
             {
-                directionChanged = true; // Activar la booleano
+                //directionChanged = true; // Activar la booleano
                 Debug.Log("Dirección cambiada: " + previousStickDirection + " a " + stickDirection);
             }
 

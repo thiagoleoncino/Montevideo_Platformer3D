@@ -9,7 +9,6 @@ public class ScrPlayer06MovementManager : MonoBehaviour
     private ScrPlayer03ActionManager playerActions;
     private ScrPlayer05StatsManager playerStats;
 
-
     [HideInInspector] public Rigidbody rigidBody;
     private Transform cameraTransform;
     [HideInInspector] public Vector3 currentVelocity = Vector3.zero;

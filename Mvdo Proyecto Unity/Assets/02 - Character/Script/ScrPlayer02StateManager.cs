@@ -81,11 +81,31 @@ public class ScrPlayer02StateManager : MonoBehaviour
 
     public BoxCollider groundCheckCollider;
 
-    private void OnTriggerEnter(Collider other) //NEW
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             groundedAction = true;
-        } else { airbornAction = true; }
+            airbornAction = false;
+        }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            groundedAction = true;
+            airbornAction = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            groundedAction = false;
+            airbornAction = true;
+        }
+    }
+
 }

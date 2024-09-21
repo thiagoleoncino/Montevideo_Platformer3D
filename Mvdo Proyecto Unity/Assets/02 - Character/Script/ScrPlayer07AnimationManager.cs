@@ -8,6 +8,7 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
     private ScrPlayer01ControlManager playerInputs;
     private ScrPlayer02StateManager playerState;
     private ScrPlayer03ActionManager playerActions;
+    private ScrPlayer06MovementManager playerMove;
     private Animator animator;
 
     private void Awake()
@@ -15,6 +16,7 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
         playerInputs = GetComponentInParent<ScrPlayer01ControlManager>();
         playerActions = GetComponentInParent<ScrPlayer03ActionManager>();
         playerState = GetComponent<ScrPlayer02StateManager>();
+        playerMove = GetComponent<ScrPlayer06MovementManager>();
         animator = GetComponent<Animator>();
     }
 
@@ -23,7 +25,7 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
         animator.SetFloat("InputForce", playerInputs.stickInput.magnitude, 0.05f, Time.deltaTime);
 
         // Maneja la animación de GroundBreak
-        PlayAnimation(ScrPlayer03ActionManager.ActionState.GroundBreak, "04 - RunStop");
+        PlayAnimation(ScrPlayer03ActionManager.ActionState.GroundBreak, "004 - RunStop");
 
         // Maneja las animaciones de movimiento y estado
         SetAnimation(playerActions.playerIsMoving, "IsMoving");
@@ -31,8 +33,12 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
         SetAnimation(playerActions.playerIsJumping, "IsJumping");
 
         // Maneja las animaciones de ataque
-        PlayAnimation(ScrPlayer03ActionManager.ActionState.Attack1, "07 - Attack1");
-        PlayAnimation(ScrPlayer03ActionManager.ActionState.Attack2, "08 - Attack2");
+        PlayAnimation(ScrPlayer03ActionManager.ActionState.Attack1, "007 - Attack1");
+        PlayAnimation(ScrPlayer03ActionManager.ActionState.Attack2, "008 - Attack2");
+
+        SetAnimation(playerState.groundedAction, "IsGrounded");
+
+        animator.SetFloat("YAxis", playerMove.rigidBody.velocity.y);
     }
 
     public void SetAnimation(bool action, string animationBool)
@@ -74,5 +80,10 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
     public void AttackComboEvent()
     {
         playerActions.playerCanCombo = true;
+    }
+
+    public void StopJumpingEvent()
+    {
+        playerActions.playerIsJumping = false;
     }
 }

@@ -263,6 +263,9 @@ MonoBehaviour:
   InputRightShoulder2: 0
   inputButtonStart: 0
   inputButtonSelect: 0
+  brakeActive: 0
+  previousStickDirection: 
+  directionChanged: 0
 --- !u!114 &2023047668564889251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,9 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e843067969af00c49a81c37aec40129b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentActionState: 0
-  currentSurfaceState: 0
   currentMoveState: 0
+  currentSurfaceState: 0
+  currentActionState: 0
   groundCheckCollider: {fileID: 8771166758160338057}
 --- !u!114 &44449137930582380
 MonoBehaviour:
@@ -291,14 +294,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d64b0621db80844a37cd7e51ce4637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualAction: 
+  currentAction: 0
   playerCanMove: 0
   playerCanCombo: 0
   playerIsMoving: 0
-  playerIsBreaking: 0
-  playerIsStanding: 0
   playerIsCrouching: 0
   playerIsAttacking: 0
+  playerIsJumping: 0
 --- !u!114 &2447887527254717554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +318,7 @@ MonoBehaviour:
   acceleration: 4
   deceleration: 9
   turnResistance: 5
+  jumpForce: 1
 --- !u!114 &1560882516564193816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 0}
+  currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &8771166758336609517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,8 +420,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.15, y: 1, z: 1.15}
-  m_Center: {x: 0, y: -0.35, z: 0}
+  m_Size: {x: 1.15, y: 2.8622117, z: 1.15}
+  m_Center: {x: 0, y: -1.2811056, z: 0}
 --- !u!1001 &7039778038551444323
 PrefabInstance:
   m_ObjectHideFlags: 0
