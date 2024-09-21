@@ -129,9 +129,18 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 
     private void HandleGroundedAttackActions()
     {
-        if (playerInputs.inputButton2)
+        if (playerInputs.inputButton2 && !playerCanCombo)
         {
             currentAction = ActionState.Attack1;
+            playerIsMoving = false;
+            playerIsAttacking = true;
+            playerState.objectCantMove = true;
+            playerState.cancelableAction = true;
+        }
+
+        if (playerInputs.inputButton2 && playerCanCombo)
+        {
+            currentAction = ActionState.Attack2;
             playerIsMoving = false;
             playerIsAttacking = true;
             playerState.objectCantMove = true;

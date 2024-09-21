@@ -6,29 +6,11 @@ Cambios:
 Queda:
 - Actualizar Code Document Scr Animations
 - Actualizar documentos con las acciones agregadas (Break, Crouch, Golpe)
-- Implementar codigo de break para que se active al frenar
+- Actualizar documetno de Action manager
+- Mejorar Break
 - Implementar Salto Neutral y Salto en Movimiento
 
 Mejoras:
 - Timing y cancelacion de los ataques
 - Giro agachado menos bruzco
 - Giro mas natural del personaje
-
-Pasivas
-- Idle
-- Fall
-- Swim
-
-Cancelables
-- Walk
-- Run
-- Crouch
-- Crouch Walk
-- Jump
-- Jump Foward
-- Swim Foward
-
-NoCancelables
-- Punch 1/2
-- Roll
-- 

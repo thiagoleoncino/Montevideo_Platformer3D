@@ -7,6 +7,8 @@ using static UnityEngine.EventSystems.PointerEventData;
 
 public class ScrPlayer01ControlManager : MonoBehaviour
 {
+    private ScrPlayer03ActionManager playerActions;
+
     public InputActionAsset inputActions;
 
     [HideInInspector] public InputAction inputActionStickIzquierdo;
@@ -48,7 +50,7 @@ public class ScrPlayer01ControlManager : MonoBehaviour
     private void Awake()
     {
         AssignActions();
-        previousStickDirection = "Neutral"; // Inicializar con "Neutral"
+        playerActions = GetComponentInParent<ScrPlayer03ActionManager>();
     }
 
     protected virtual void OnEnable() => inputActions?.Enable();
@@ -79,6 +81,9 @@ public class ScrPlayer01ControlManager : MonoBehaviour
         inputActionR1 = inputActions["R1"];
     }
 
+    // Variable para controlar si la corrutina está en ejecución
+    private bool isNeutralCoroutineRunning = false;
+
     private void DetermineStickInput(Vector2 stickInput)
     {
         // Calcular la magnitud del movimiento del stick
@@ -88,7 +93,23 @@ public class ScrPlayer01ControlManager : MonoBehaviour
         if (stickMagnitude < 0.1f)
         {
             stickDirection = "Neutral";
+
+            // Iniciar la corrutina solo si no está ya en ejecución
+            if (!isNeutralCoroutineRunning)
+            {
+                StartCoroutine(UpdatePreviousStickDirectionWithDelay());
+            }
+
             return; // Salir si el stick no se mueve
+        }
+        else
+        {
+            // Si el stick se mueve, cancelar la corrutina si estaba en ejecución
+            if (isNeutralCoroutineRunning)
+            {
+                StopCoroutine(UpdatePreviousStickDirectionWithDelay());
+                isNeutralCoroutineRunning = false;
+            }
         }
 
         // Calcular el ángulo del stick en grados
@@ -114,7 +135,7 @@ public class ScrPlayer01ControlManager : MonoBehaviour
             stickDirection = "Derecha Diagonal Arriba";
 
         // Verificar si hay un cambio abrupto en la dirección y si la magnitud es mayor que el umbral
-        if (stickMagnitude > stickThreshold && stickDirection != previousStickDirection)
+        if (stickDirection != previousStickDirection)
         {
             // Comprobar si el cambio es brusco
             if ((previousStickDirection == "Arriba" && stickDirection == "Abajo") ||
@@ -130,11 +151,22 @@ public class ScrPlayer01ControlManager : MonoBehaviour
             previousStickDirection = stickDirection;
         }
 
-        if(directionChanged)
+        if (directionChanged)
         {
             previousStickDirection = null;
         }
-    } //NEW!
+    }
+
+    // Corrutina para retrasar la actualización de previousStickDirection a "Neutral"
+    private IEnumerator UpdatePreviousStickDirectionWithDelay()
+    {
+        isNeutralCoroutineRunning = true; // Marcar que la corrutina está en ejecución
+        yield return new WaitForSeconds(0.1f); // Esperar 2 segundos (ajusta este valor según sea necesario)
+        previousStickDirection = "Neutral";
+        isNeutralCoroutineRunning = false; // Marcar que la corrutina ha finalizado
+    }
+
+
 
     private void ConfigureActionBool(InputAction action, System.Action<bool> setBool)
     {

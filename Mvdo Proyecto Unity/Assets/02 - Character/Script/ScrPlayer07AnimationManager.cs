@@ -69,8 +69,6 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
         {
             Debug.LogWarning($"No se encontró ninguna propiedad bool con el nombre: {actionBoolName} en scriptActions");
         }
-
-        playerActions.playerCanCombo = false;
     }
 
     public void AttackComboEvent()
