@@ -2340,7 +2340,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 92629804}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Barandas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3093,25 +3093,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obj_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8771166758160338057, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
+      propertyPath: m_Size.y
+      value: 2.8622117
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771166758160338057, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
+      propertyPath: m_Center.y
+      value: -1.2811056
+      objectReference: {fileID: 0}
     - target: {fileID: 9093832853923512589, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9093832853923512589, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 24.25
       objectReference: {fileID: 0}
     - target: {fileID: 9093832853923512589, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9093832853923512589, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: -23.52614
       objectReference: {fileID: 0}
     - target: {fileID: 9093832853923512589, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.9396927
       objectReference: {fileID: 0}
     - target: {fileID: 9093832853923512589, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3119,7 +3127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9093832853923512589, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: -0.3420201
       objectReference: {fileID: 0}
     - target: {fileID: 9093832853923512589, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3131,7 +3139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9093832853923512589, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 9093832853923512589, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -6194,6 +6202,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1537545177}
     m_Modifications:
+    - target: {fileID: -8718802100756508339, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6254,6 +6266,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8575070118746874969, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6010925987086215445, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -2789081310018722720, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -6261,6 +6281,26 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
       propertyPath: m_Name
       value: farm_item_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136971772874377714, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252255647049061864, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470227530458115949, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618059061716063766, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdcf937fba2be4f4ba3b85321eadae4b, type: 3}
@@ -8024,7 +8064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 939130605}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Patas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10650,7 +10690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1010264871}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Escenario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13314,8 +13354,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203789656}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3841674, z: -6}
+  m_LocalRotation: {x: 0, y: -0.3420201, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 25.535576, y: 0.38416743, z: -25.05823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13393,6 +13433,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero of Time Statue
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 26d6c84d8741bdb4eb793e1598190a77, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 26d6c84d8741bdb4eb793e1598190a77, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26d6c84d8741bdb4eb793e1598190a77, type: 3}
 --- !u!1001 &1301822421
@@ -13449,6 +13497,10 @@ PrefabInstance:
     - target: {fileID: 944838438270561264, guid: 7430b51829841d940b88ef28296582fd, type: 3}
       propertyPath: m_Name
       value: BancoMadera (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 944838438270561264, guid: 7430b51829841d940b88ef28296582fd, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7430b51829841d940b88ef28296582fd, type: 3}
@@ -17188,7 +17240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1537545177}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decoraciones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17240,15 +17292,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581060055}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3841674, z: -6}
+  m_LocalRotation: {x: 0, y: -0.3420201, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 25.535576, y: 0.38416743, z: -25.05823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2017092337}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -40, z: 0}
 --- !u!114 &1581060057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19349,7 +19401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1688213355}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BancoPiedra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20775,6 +20827,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BancoMadera (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 944838438270561264, guid: 7430b51829841d940b88ef28296582fd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7430b51829841d940b88ef28296582fd, type: 3}
 --- !u!1 &1840825580
@@ -21295,7 +21351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1877637176}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23820,7 +23876,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2093522363}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Superficie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23860,7 +23916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2113044389}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edificios
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24102,6 +24158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BancoMadera
       objectReference: {fileID: 0}
+    - target: {fileID: 944838438270561264, guid: 7430b51829841d940b88ef28296582fd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7430b51829841d940b88ef28296582fd, type: 3}
 --- !u!4 &2850474045286823819 stripped
@@ -24128,6 +24188,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1168154475}
+    - target: {fileID: 3421624682639332281, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3853322616489268202, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -24148,6 +24212,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 719323594}
+    - target: {fileID: 3853322616494511013, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3853322616494511023, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -24200,6 +24268,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 440480227}
+    - target: {fileID: 3853322617045976007, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3853322617049332936, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -24248,6 +24320,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1903795133}
+    - target: {fileID: 3853322617352470815, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3853322617438600101, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -24284,6 +24360,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1513383272}
+    - target: {fileID: 3853322617555006888, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3853322617658199268, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -24304,6 +24384,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 224383876}
+    - target: {fileID: 3853322617710589610, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3853322617710589780, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -24344,6 +24428,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1861779151}
+    - target: {fileID: 3853322617938820961, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3853322617938820971, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -24660,6 +24748,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Intendencia
       objectReference: {fileID: 0}
+    - target: {fileID: 3853322618226428161, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3853322618226428174, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -24924,5 +25016,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1708346781}
+    - target: {fileID: 5034974380474458879, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202701750725938601, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123421932285774071, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389030761421651938, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}

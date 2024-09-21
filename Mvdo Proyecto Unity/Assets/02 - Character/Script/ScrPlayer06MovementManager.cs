@@ -12,7 +12,7 @@ public class ScrPlayer06MovementManager : MonoBehaviour
 
     [HideInInspector] public Rigidbody rigidBody;
     private Transform cameraTransform;
-    private Vector3 currentVelocity = Vector3.zero;
+    [HideInInspector] public Vector3 currentVelocity = Vector3.zero;
 
     private void Awake()
     {
@@ -26,16 +26,7 @@ public class ScrPlayer06MovementManager : MonoBehaviour
         playerActions = GetComponent<ScrPlayer03ActionManager>();
     }
 
-    private void FixedUpdate()
-    {
-        if (playerActions.playerCanMove)
-        {
-            HandleHorizontalMovement();
-        } else { currentVelocity = Vector3.zero; }
-
-    }
-
-    private void HandleHorizontalMovement()
+    public void HandleHorizontalMovement()
     {
         Vector2 stickInput = playerInputs.stickInput;
 
@@ -57,7 +48,7 @@ public class ScrPlayer06MovementManager : MonoBehaviour
             currentVelocity = moveDirection * targetSpeed;
         }
 
-        if (playerActions.playerIsStanding) // Si el personaje está parado, usar walkSpeed y si aplicara aceleración/desaceleración
+        if (!playerActions.playerIsCrouching) // Si el personaje está parado, usar walkSpeed y si aplicara aceleración/desaceleración
         {
             float magnitude = stickInput.magnitude;
             targetSpeed = Mathf.Lerp(0, playerStats.walkSpeed, magnitude);
@@ -96,5 +87,11 @@ public class ScrPlayer06MovementManager : MonoBehaviour
         currentVelocity = Vector3.Lerp(currentVelocity, Vector3.zero, Time.fixedDeltaTime * playerStats.deceleration);
         Vector3 movement = currentVelocity * Time.fixedDeltaTime;
         rigidBody.MovePosition(rigidBody.position + movement);
+    }
+
+    public void HandleVerticalMovement()
+    {
+        Vector3 jumpVelocity = Vector3.up * playerStats.jumpForce;
+        rigidBody.AddForce(jumpVelocity, ForceMode.VelocityChange);
     }
 }

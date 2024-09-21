@@ -25,22 +25,22 @@ public enum MoveState
 
 public class ScrPlayer02StateManager : MonoBehaviour
 {
-    public ActionState currentActionState;
+    public MoveState currentMoveState;
 
-    public bool passiveAction
+    public bool objectCanMove
     {
-        get => currentActionState == ActionState.Passive;
-        set { if (value) currentActionState = ActionState.Passive; }
+        get => currentMoveState == MoveState.CanMove;
+        set { if (value) currentMoveState = MoveState.CanMove; }
     }
-    public bool cancelableAction
+    public bool objectSemiMove
     {
-        get => currentActionState == ActionState.Cancelable;
-        set { if (value) currentActionState = ActionState.Cancelable; }
+        get => currentMoveState == MoveState.SemiMove;
+        set { if (value) currentMoveState = MoveState.SemiMove; }
     }
-    public bool noCancelableAction
+    public bool objectCantMove
     {
-        get => currentActionState == ActionState.NonCancelable;
-        set { if (value) currentActionState = ActionState.NonCancelable; }
+        get => currentMoveState == MoveState.CantMove;
+        set { if (value) currentMoveState = MoveState.CantMove; }
     }
 
     public SurfaceState currentSurfaceState;
@@ -61,22 +61,31 @@ public class ScrPlayer02StateManager : MonoBehaviour
         set { if (value) currentSurfaceState = SurfaceState.Waterborne; }
     }
 
-    public MoveState currentMoveState;
+    public ActionState currentActionState;
 
-    public bool objectCanMove
+    public bool passiveAction
     {
-        get => currentMoveState == MoveState.CanMove;
-        set { if (value) currentMoveState = MoveState.CanMove; }
+        get => currentActionState == ActionState.Passive;
+        set { if (value) currentActionState = ActionState.Passive; }
     }
-    public bool objectSemiMove
+    public bool cancelableAction
     {
-        get => currentMoveState == MoveState.SemiMove;
-        set { if (value) currentMoveState = MoveState.SemiMove; }
+        get => currentActionState == ActionState.Cancelable;
+        set { if (value) currentActionState = ActionState.Cancelable; }
     }
-    public bool objectCantMove
+    public bool noCancelableAction
     {
-        get => currentMoveState == MoveState.CantMove;
-        set { if (value) currentMoveState = MoveState.CantMove; }
+        get => currentActionState == ActionState.NonCancelable;
+        set { if (value) currentActionState = ActionState.NonCancelable; }
     }
 
+    public BoxCollider groundCheckCollider;
+
+    private void OnTriggerEnter(Collider other) //NEW
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            groundedAction = true;
+        } else { airbornAction = true; }
+    }
 }

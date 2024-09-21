@@ -9,5 +9,6 @@ public class ScrPlayer05StatsManager : MonoBehaviour
     public float crouchSpeed;//NEW
     public float acceleration;
     public float deceleration; 
-    public float turnResistance; 
+    public float turnResistance;
+    public float jumpForce;
 }

@@ -43,7 +43,7 @@ public class ScrPlayer04CameraManager : MonoBehaviour
             SmoothResetCameraRotation();
         }
 
-        if (playerActions.playerIsStanding) //NEW
+        if (!playerActions.playerIsCrouching) //NEW
         {
             if (playerActions.playerIsMoving)
             {

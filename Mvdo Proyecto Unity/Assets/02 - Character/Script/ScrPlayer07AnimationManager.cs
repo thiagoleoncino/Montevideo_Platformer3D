@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Playables;
+using static UnityEngine.InputSystem.DefaultInputActions;
 
 public class ScrPlayer07AnimationManager : MonoBehaviour
 {
@@ -23,46 +22,39 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
     {
         animator.SetFloat("InputForce", playerInputs.stickInput.magnitude, 0.05f, Time.deltaTime);
 
-        PlayAnimation("GroundBreak", "04 - RunStop"); //NEW
+        // Maneja la animación de GroundBreak
+        PlayAnimation(ScrPlayer03ActionManager.ActionState.GroundBreak, "04 - RunStop");
 
-        SetAnimation(playerActions.playerIsMoving, "IsMoving"); //NEW
+        // Maneja las animaciones de movimiento y estado
+        SetAnimation(playerActions.playerIsMoving, "IsMoving");
+        SetAnimation(playerActions.playerIsCrouching, "IsCrouching");
+        SetAnimation(playerActions.playerIsJumping, "IsJumping");
 
-        SetAnimation(playerActions.playerIsCrouching, "IsCrouching"); //NEW
-
-        PlayAnimation("Attack1", "07 - Attack1"); //NEW
-
-        PlayAnimation("Attack2", "08 - Attack2"); //NEW
-
-       SetAnimation(playerActions.playerCanCombo, "CanCombo"); //NEW
-
-       SetAnimation(playerInputs.inputButton2, "AttackButton"); //NEW
+        // Maneja las animaciones de ataque
+        PlayAnimation(ScrPlayer03ActionManager.ActionState.Attack1, "07 - Attack1");
+        PlayAnimation(ScrPlayer03ActionManager.ActionState.Attack2, "08 - Attack2");
     }
 
-    public void SetAnimation(bool Action, string AnimationBool)
+    public void SetAnimation(bool action, string animationBool)
     {
-        if (Action)
-        {
-            animator.SetBool(AnimationBool, true);
-        }
-        if (!Action)
-        {
-            animator.SetBool(AnimationBool, false);
-        }
+        animator.SetBool(animationBool, action);
     }
 
-    public void PlayAnimation(string ActualAction, string Animation)
+    public void PlayAnimation(ScrPlayer03ActionManager.ActionState actualAction, string animation)
     {
-        if (playerActions.actualAction == ActualAction)
+        if (playerActions.currentAction == actualAction)
         {
-            animator.Play(Animation);
+            animator.Play(animation);
         }
     }
 
     public void ResetStateEvent()
     {
-        animator.SetBool("BackToIdle", true); //NEW
+        animator.SetBool("BackToIdle", true);
+        playerActions.currentAction = ScrPlayer03ActionManager.ActionState.Idle;
         playerState.passiveAction = true;
         playerState.objectCanMove = true;
+        playerInputs.directionChanged = false;
     }
 
     public void FalseActionByName(string actionBoolName)
@@ -72,7 +64,6 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
         if (field != null && field.FieldType == typeof(bool))
         {
             field.SetValue(playerActions, false);
-            //Debug.Log($"{eventName} en scriptActions ha sido establecido a false");
         }
         else
         {
@@ -80,12 +71,10 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
         }
 
         playerActions.playerCanCombo = false;
-
-    } //NEW
+    }
 
     public void AttackComboEvent()
     {
         playerActions.playerCanCombo = true;
     }
-
 }

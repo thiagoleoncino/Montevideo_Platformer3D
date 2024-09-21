@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.EventSystems.PointerEventData;
@@ -39,9 +40,15 @@ public class ScrPlayer01ControlManager : MonoBehaviour
     public bool inputButtonStart; //Start
     public bool inputButtonSelect; //Select
 
+    // Nueva variable para el sistema de freno
+    public bool brakeActive = false;
+    public string previousStickDirection; // Variable para almacenar la dirección anterior
+    public bool directionChanged; // Booleano para detectar un cambio de dirección
+
     private void Awake()
     {
         AssignActions();
+        previousStickDirection = "Neutral"; // Inicializar con "Neutral"
     }
 
     protected virtual void OnEnable() => inputActions?.Enable();
@@ -78,10 +85,10 @@ public class ScrPlayer01ControlManager : MonoBehaviour
         stickMagnitude = stickInput.magnitude;
 
         // Si el stick no se está moviendo (magnitud muy pequeña), establecer la dirección como "Neutral"
-        if (stickMagnitude < 0.1f) // Puedes ajustar este valor si lo prefieres
+        if (stickMagnitude < 0.1f)
         {
             stickDirection = "Neutral";
-            return;
+            return; // Salir si el stick no se mueve
         }
 
         // Calcular el ángulo del stick en grados
@@ -105,14 +112,33 @@ public class ScrPlayer01ControlManager : MonoBehaviour
             stickDirection = "Derecha";
         else if (angle >= 22.5f && angle < 67.5f)
             stickDirection = "Derecha Diagonal Arriba";
-        else
-            stickDirection = "Neutral";
-    }
+
+        // Verificar si hay un cambio abrupto en la dirección y si la magnitud es mayor que el umbral
+        if (stickMagnitude > stickThreshold && stickDirection != previousStickDirection)
+        {
+            // Comprobar si el cambio es brusco
+            if ((previousStickDirection == "Arriba" && stickDirection == "Abajo") ||
+                (previousStickDirection == "Abajo" && stickDirection == "Arriba") ||
+                (previousStickDirection == "Izquierda" && stickDirection == "Derecha") ||
+                (previousStickDirection == "Derecha" && stickDirection == "Izquierda"))
+            {
+                directionChanged = true; // Activar la booleano
+                Debug.Log("Dirección cambiada: " + previousStickDirection + " a " + stickDirection);
+            }
+
+            // Actualizar previousStickDirection solo si hubo un cambio efectivo
+            previousStickDirection = stickDirection;
+        }
+
+        if(directionChanged)
+        {
+            previousStickDirection = null;
+        }
+    } //NEW!
 
     private void ConfigureActionBool(InputAction action, System.Action<bool> setBool)
     {
         action.performed += ctx => setBool(true);
         action.canceled += ctx => setBool(false);
     }
-
 }
