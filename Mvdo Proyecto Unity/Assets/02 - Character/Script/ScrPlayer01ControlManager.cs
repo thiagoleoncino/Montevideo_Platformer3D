@@ -166,8 +166,6 @@ public class ScrPlayer01ControlManager : MonoBehaviour
         isNeutralCoroutineRunning = false; // Marcar que la corrutina ha finalizado
     }
 
-
-
     private void ConfigureActionBool(InputAction action, System.Action<bool> setBool)
     {
         action.performed += ctx => setBool(true);

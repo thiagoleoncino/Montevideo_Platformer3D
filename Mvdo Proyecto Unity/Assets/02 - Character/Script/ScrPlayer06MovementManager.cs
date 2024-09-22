@@ -25,7 +25,7 @@ public class ScrPlayer06MovementManager : MonoBehaviour
         playerActions = GetComponent<ScrPlayer03ActionManager>();
     }
 
-    public void HandleHorizontalMovement()
+    public void HandleSticklMovement(float speedStat, bool aceleration_desaceleration)
     {
         Vector2 stickInput = playerInputs.stickInput;
 
@@ -41,16 +41,16 @@ public class ScrPlayer06MovementManager : MonoBehaviour
         Vector3 moveDirection = CalculateMoveDirection(stickInput);
         float targetSpeed;
 
-        if (playerActions.playerIsCrouching) // Si el personaje está agachado, usar crouchSpeed y no aplicara aceleración/desaceleración
+        if (!aceleration_desaceleration) // Si el personaje está agachado, usar crouchSpeed y no aplicara aceleración/desaceleración
         {
-            targetSpeed = playerStats.crouchSpeed;
+            targetSpeed = speedStat;
             currentVelocity = moveDirection * targetSpeed;
         }
 
-        if (!playerActions.playerIsCrouching) // Si el personaje está parado, usar walkSpeed y si aplicara aceleración/desaceleración
+        if (aceleration_desaceleration) // Si el personaje está parado, usar walkSpeed y si aplicara aceleración/desaceleración
         {
             float magnitude = stickInput.magnitude;
-            targetSpeed = Mathf.Lerp(0, playerStats.walkSpeed, magnitude);
+            targetSpeed = Mathf.Lerp(0, speedStat, magnitude);
             currentVelocity = Vector3.Lerp(currentVelocity, moveDirection * targetSpeed, Time.fixedDeltaTime * playerStats.acceleration);
         }
 
@@ -88,9 +88,10 @@ public class ScrPlayer06MovementManager : MonoBehaviour
         rigidBody.MovePosition(rigidBody.position + movement);
     }
 
-    public void HandleVerticalMovement()
+    public void HandleNeutralJump()
     {
         Vector3 jumpVelocity = Vector3.up * playerStats.jumpForce;
         rigidBody.AddForce(jumpVelocity, ForceMode.VelocityChange);
     }
+
 }

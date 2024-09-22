@@ -30,7 +30,7 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
         // Maneja las animaciones de movimiento y estado
         SetAnimation(playerActions.playerIsMoving, "IsMoving");
         SetAnimation(playerActions.playerIsCrouching, "IsCrouching");
-        SetAnimation(playerActions.playerIsJumping, "IsJumping");
+        SetAnimation(playerActions.currentAction == ScrPlayer03ActionManager.ActionState.NeutralJump, "IsJumping");
 
         // Maneja las animaciones de ataque
         PlayAnimation(ScrPlayer03ActionManager.ActionState.Attack1, "007 - Attack1");
@@ -84,6 +84,7 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
 
     public void StopJumpingEvent()
     {
-        playerActions.playerIsJumping = false;
+        //playerActions.playerIsJumping = false;
+        playerState.objectCanMove = true;
     }
 }

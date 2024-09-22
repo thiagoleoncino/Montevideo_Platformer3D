@@ -8,7 +8,7 @@ Queda:
 - Actualizar documentos con las acciones agregadas (Break, Crouch, Golpe)
 - Actualizar documetno de Action manager
 - Mejorar Break
-- Implementar Salto Neutral y Salto en Movimiento
+- Implementar Salto en Movimiento
 
 Mejoras:
 - Timing y cancelacion de los ataques

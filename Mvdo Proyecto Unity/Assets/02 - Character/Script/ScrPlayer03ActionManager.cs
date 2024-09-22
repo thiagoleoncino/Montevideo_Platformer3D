@@ -6,6 +6,7 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 {
     private ScrPlayer01ControlManager playerInputs;
     private ScrPlayer02StateManager playerState;
+    private ScrPlayer05StatsManager playerStats;
     private ScrPlayer06MovementManager playerMove;
 
     public enum ActionState 
@@ -13,7 +14,7 @@ public class ScrPlayer03ActionManager : MonoBehaviour
         Idle, NormalWalk, FastWalk, 
         CrouchIdle, CrouchWalk, 
         Attack1, Attack2, 
-        NeutralJump, GroundBreak 
+        NeutralJump, MovingJump, Fall, GroundBreak 
     }
 
     public ActionState currentAction;
@@ -33,33 +34,39 @@ public class ScrPlayer03ActionManager : MonoBehaviour
         playerInputs = GetComponent<ScrPlayer01ControlManager>();
         playerState = GetComponent<ScrPlayer02StateManager>();
         playerMove = GetComponent<ScrPlayer06MovementManager>();
+        playerStats = GetComponent<ScrPlayer05StatsManager>();
     }
 
     void FixedUpdate()
     {
         HandleMoveStates();
 
-        if (playerState.objectCanMove && (playerState.passiveAction || playerState.cancelableAction))
+        if (playerState.objectCanMove)
         {
-            if (playerState.groundedAction)
+            if (playerState.passiveAction || playerState.cancelableAction)
             {
-                GroundedMovementActions();
-                HandleGroundedAttackActions();
+                if (playerState.groundedAction)
+                {
+                    GroundedMovementActions();
+                    HandleGroundedAttackActions();
+                }
+
+                HandleJumpActions();
+
+                if (playerState.airbornAction)
+                {
+                    AirbornMovementActions();
+                }    
             }
         }
-
-        HandleJumpActions();
     }
 
     private void HandleMoveStates()
     {
         playerCanMove = playerState.objectCanMove && !playerState.objectSemiMove && !playerState.objectCantMove;
     }
-
     private void GroundedMovementActions()
     {
-        playerMove.HandleHorizontalMovement();
-
         if (playerInputs.InputLeftShoulder1)
         {
             playerIsCrouching = true;
@@ -81,6 +88,8 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 
     private void HandleStandingActions()
     {
+        playerMove.HandleSticklMovement(playerStats.walkSpeed, true);
+
         if (playerInputs.stickMagnitude == 0)
         {
             currentAction = ActionState.Idle;
@@ -106,9 +115,10 @@ public class ScrPlayer03ActionManager : MonoBehaviour
             }
         }
     }
-
     private void HandleCrouchActions()
     {
+        playerMove.HandleSticklMovement(playerStats.crouchSpeed, false);
+
         if (playerInputs.stickMagnitude == 0)
         {
             currentAction = ActionState.CrouchIdle;
@@ -154,17 +164,20 @@ public class ScrPlayer03ActionManager : MonoBehaviour
     {
         if (playerState.groundedAction && playerInputs.inputButton1)
         {
-            playerMove.HandleVerticalMovement();
-            currentAction = ActionState.NeutralJump;
-            playerIsMoving = true;
-            playerIsJumping = true;
-            playerState.cancelableAction = true;
-            playerState.objectCantMove= true;
+            if (!playerIsMoving)
+            {
+                playerMove.HandleNeutralJump();
+                currentAction = ActionState.NeutralJump;
+                playerIsJumping = true;
+                playerState.cancelableAction = true;
+                playerState.objectCantMove = true;
+            }
         }
     }
 
-    public void AirbornMovementActions()
+    private void AirbornMovementActions()
     {
-
+        playerMove.HandleSticklMovement(playerStats.jumpMoveSpeed, false);
+        currentAction = ActionState.Fall;
     }
 }
