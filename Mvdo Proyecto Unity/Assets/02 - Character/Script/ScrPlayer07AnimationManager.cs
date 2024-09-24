@@ -24,21 +24,12 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
     {
         animator.SetFloat("InputForce", playerInputs.stickInput.magnitude, 0.05f, Time.deltaTime);
 
-        // Maneja la animación de GroundBreak
-        PlayAnimation(ScrPlayer03ActionManager.ActionState.GroundBreak, "004 - RunStop");
-
-        // Maneja las animaciones de movimiento y estado
         SetAnimation(playerActions.playerIsMoving, "IsMoving");
         SetAnimation(playerActions.playerIsCrouching, "IsCrouching");
-        SetAnimation(playerActions.currentAction == ScrPlayer03ActionManager.ActionState.NeutralJump, "IsJumping");
-
-        // Maneja las animaciones de ataque
-        PlayAnimation(ScrPlayer03ActionManager.ActionState.Attack1, "007 - Attack1");
-        PlayAnimation(ScrPlayer03ActionManager.ActionState.Attack2, "008 - Attack2");
 
         SetAnimation(playerState.groundedAction, "IsGrounded");
-
         animator.SetFloat("YAxis", playerMove.rigidBody.velocity.y);
+
     }
 
     public void SetAnimation(bool action, string animationBool)
@@ -46,12 +37,23 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
         animator.SetBool(animationBool, action);
     }
 
-    public void PlayAnimation(ScrPlayer03ActionManager.ActionState actualAction, string animation)
+    public void PlayAnimation(string animation2)
     {
-        if (playerActions.currentAction == actualAction)
+        float transitionDuration = 0.075f;
+        AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (!currentState.IsName(animation2))
         {
-            animator.Play(animation);
+            animator.CrossFade(animation2, transitionDuration);
+            StartCoroutine(PlayAfterFade(animation2, transitionDuration));
         }
+    }
+
+    //NEW
+    private IEnumerator PlayAfterFade(string animation, float transitionDuration)
+    {
+        yield return new WaitForSeconds(transitionDuration);
+        animator.Play(animation);
     }
 
     public void ResetStateEvent()
@@ -60,7 +62,6 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
         playerActions.currentAction = ScrPlayer03ActionManager.ActionState.Idle;
         playerState.passiveAction = true;
         playerState.objectCanMove = true;
-        playerInputs.directionChanged = false;
     }
 
     public void FalseActionByName(string actionBoolName)
@@ -80,11 +81,5 @@ public class ScrPlayer07AnimationManager : MonoBehaviour
     public void AttackComboEvent()
     {
         playerActions.playerCanCombo = true;
-    }
-
-    public void StopJumpingEvent()
-    {
-        //playerActions.playerIsJumping = false;
-        playerState.objectCanMove = true;
     }
 }

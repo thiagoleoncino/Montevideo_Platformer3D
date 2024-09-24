@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\02 - character\\script\\scrplayer06movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer06movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\usuario\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\02 - character\\script\\scrplayer03actionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer03actionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\02 - character\\script\\scrplayer07animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer07animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\usuario\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\02 - character\\script\\scrplayer06movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer06movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\02 - character\\script\\scrplayer05statsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer05statsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\usuario\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\02 - character\\script\\scrplayer01controlmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer01controlmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\usuario\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\02 - character\\script\\scrplayer02statemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer02statemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ScrPlayer01ControlManager.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer01ControlManager.cs",
-              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer01ControlManager.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer01ControlManager.cs",
-              "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer01ControlManager.cs",
-              "ViewState": "AQIAAIwAAAAAAAAAAAAswK0AAAABAAAA",
+              "DocumentIndex": 2,
+              "Title": "ScrPlayer02StateManager.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer02StateManager.cs",
+              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer02StateManager.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer02StateManager.cs",
+              "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer02StateManager.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAwwC8AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T19:11:48.095Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ScrPlayer03ActionManager.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer03ActionManager.cs",
-              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer03ActionManager.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer03ActionManager.cs",
-              "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer03ActionManager.cs",
-              "ViewState": "AQIAAI0AAAAAAAAAAAAzwK0AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-22T22:39:42.817Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ScrPlayer05StatsManager.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer05StatsManager.cs",
-              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer05StatsManager.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer05StatsManager.cs",
-              "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer05StatsManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T19:14:36.172Z",
+              "WhenOpened": "2024-09-24T00:00:54.458Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ScrPlayer03ActionManager.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer03ActionManager.cs",
+              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer03ActionManager.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer03ActionManager.cs",
+              "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer03ActionManager.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAADwAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T23:57:59.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ScrPlayer06MovementManager.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer06MovementManager.cs",
               "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer06MovementManager.cs",
               "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer06MovementManager.cs",
               "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer06MovementManager.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAwwF8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T19:14:51.287Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ScrPlayer07AnimationManager.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer07AnimationManager.cs",
-              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer07AnimationManager.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer07AnimationManager.cs",
-              "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer07AnimationManager.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAowB0AAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T19:23:09.887Z",
+              "WhenOpened": "2024-09-23T23:49:44.82Z",
               "EditorCaption": ""
             }
           ]

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class ScrPlayer06MovementManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ScrPlayer06MovementManager : MonoBehaviour
 
     [HideInInspector] public Rigidbody rigidBody;
     private Transform cameraTransform;
-    [HideInInspector] public Vector3 currentVelocity = Vector3.zero;
+    public Vector3 currentVelocity = Vector3.zero;
 
     private void Awake()
     {
@@ -93,5 +94,21 @@ public class ScrPlayer06MovementManager : MonoBehaviour
         Vector3 jumpVelocity = Vector3.up * playerStats.jumpForce;
         rigidBody.AddForce(jumpVelocity, ForceMode.VelocityChange);
     }
+
+    public void HandleRunningJump()
+    {
+        // Conservar el movimiento horizontal
+        Vector3 jumpVelocity = Vector3.up * playerStats.jumpForce;
+
+        // Asegúrate de mantener la velocidad actual en el eje X y Z
+        jumpVelocity.x = currentVelocity.x;
+        jumpVelocity.z = currentVelocity.z;
+
+        // Aplicar la fuerza de salto al Rigidbody
+        rigidBody.velocity = jumpVelocity; // Esto garantiza que se mantenga la velocidad en horizontal
+
+        // Puedes añadir aquí más lógica si es necesario, como activar animaciones de salto
+    }
+
 
 }
