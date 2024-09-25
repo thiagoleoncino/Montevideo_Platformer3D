@@ -4,114 +4,56 @@ using UnityEngine;
 
 public class Scr_Prueba : MonoBehaviour
 {
-    private ScrPlayer01ControlManager playerInputs;
-    private ScrPlayer02StateManager playerState;
-    private ScrPlayer05StatsManager playerStats;
-    private ScrPlayer06MovementManager playerMove;
+    public float moveSpeed = 5f;         // Velocidad de movimiento en X/Z
+    public float jumpForce = 7f;         // Fuerza del salto
+    public bool Inertia = false;       // Para verificar si está en el suelo
+    private Rigidbody rb;
+    private Vector3 jumpInertia;         // Para almacenar la velocidad cuando salta
+    private ScrPlayer01ControlManager control;
 
-    public enum ActionState
+    void Start()
     {
-        Idle, NormalWalk, FastWalk,
-        CrouchIdle, CrouchWalk,
-        Attack1, Attack2,
-        NeutralJump, MovingJump, Fall, GroundBreak
+        rb = GetComponent<Rigidbody>();
+        control = GetComponent<ScrPlayer01ControlManager>();
     }
 
-    public ActionState currentAction;
-    private bool playerCanCombo;
-    private bool playerIsMoving;
-    private bool playerIsCrouching;
-
-    private void Awake()
+    void Update()
     {
-        playerInputs = GetComponent<ScrPlayer01ControlManager>();
-        playerState = GetComponent<ScrPlayer02StateManager>();
-        playerMove = GetComponent<ScrPlayer06MovementManager>();
-        playerStats = GetComponent<ScrPlayer05StatsManager>();
+        //HandleGroundMovement();
+        // HandleJump();
     }
 
-    void FixedUpdate()
+    public void HandleGroundMovement()
     {
-        if (playerState.objectCanMove)
-        {
-            if (playerState.passiveAction || playerState.cancelableAction)
-            {
-                if (playerState.groundedAction)
-                {
-                    GroundedMovementActions();
-                }
-            }
-        }
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
+
+        Vector3 move = new Vector3(moveX, 0f, moveZ) * moveSpeed;
+        move = transform.TransformDirection(move);  // Para que se mueva en la dirección en que el objeto está mirando
+
+        rb.velocity = new Vector3(move.x, rb.velocity.y, move.z);  // Mantener la velocidad en Y (gravedad)
     }
 
-    private void GroundedMovementActions()
+    public void HandleAirMovement()
     {
-        //If the player is Standing or Crouching
-        if (playerInputs.InputLeftShoulder1)
-        {
-            playerIsCrouching = true;
-        }
-        else
-        {
-            playerIsCrouching = false;
-        }
+        // Mantener la inercia cuando está en el aire
+        rb.velocity = new Vector3(jumpInertia.x, rb.velocity.y, jumpInertia.z);
 
-        //If the player is Moving or not
-        if (playerInputs.stickMagnitude == 0)
+        // Movimiento automático hacia adelante mientras salta
+        if (Inertia)
         {
-            playerIsMoving = false;
-        }
-        else
-        {
-            playerIsMoving = true;
-        }
-
-        //Action Functions
-        if (playerIsCrouching)
-        {
-            HandleCrouchActions();
-        }
-        else
-        {
-            HandleStandingActions();
+            Vector3 forwardMovement = transform.forward * moveSpeed; // Movimiento hacia adelante
+            rb.velocity = new Vector3(forwardMovement.x, rb.velocity.y, forwardMovement.z); // Mantener la velocidad en Y (gravedad)
         }
     }
 
-    private void HandleStandingActions()
+    public void HandleJump()
     {
-        playerMove.HandleSticklMovement(playerStats.standingSpeed, true);
+        // Almacenar la velocidad en X/Z para mantener la inercia
+        jumpInertia = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        if (playerInputs.stickMagnitude == 0)
-        {
-            currentAction = ActionState.Idle;
-            playerState.passiveAction = true;
-            
-        }
-        else if (playerInputs.stickMagnitude > 0.1 && playerInputs.stickMagnitude < playerInputs.stickThreshold)
-        {
-            currentAction = ActionState.NormalWalk;
-            playerState.cancelableAction = true;
-        }
-        else if (playerInputs.stickMagnitude > playerInputs.stickThreshold)
-        {
-            currentAction = ActionState.FastWalk;
-            playerState.cancelableAction = true;
-        }
+        // Aplicar fuerza de salto
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        Inertia = true;
     }
-    private void HandleCrouchActions()
-    {
-        playerMove.HandleSticklMovement(playerStats.crouchSpeed, false);
-
-        if (playerInputs.stickMagnitude == 0)
-        {
-            currentAction = ActionState.CrouchIdle;
-            playerState.cancelableAction = true;
-        }
-        else if (playerInputs.stickMagnitude > 0.1)
-        {
-            currentAction = ActionState.CrouchWalk;
-            playerState.cancelableAction = true;
-        }
-    }
-
 }

@@ -9,6 +9,7 @@ public class ScrPlayer03ActionManager : MonoBehaviour
     private ScrPlayer05StatsManager playerStats;
     private ScrPlayer06MovementManager playerMove;
     private ScrPlayer07AnimationManager playerAnimator;
+    public Scr_Prueba prueba;
 
     public enum ActionState
     {
@@ -51,14 +52,14 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 
             if (playerState.airbornAction)
             {
-                HandleAirbornActions();
+                prueba.HandleAirMovement();
             }
 
             if (playerState.passiveAction)
             {
                 if (playerState.airbornAction)
                 {
-                    //HandleAirbornActions();
+                    HandleAirbornActions();
                 }
             }
         }
@@ -152,7 +153,7 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 
     private void HandleAirbornActions()
     {
-        playerMove.HandleSticklMovement(playerStats.airMoveSpeed, false);
+        //playerMove.HandleSticklMovement(playerStats.airMoveSpeed, false);
         currentAction = ActionState.Fall;
     }
     public void HandleJumpActions()
@@ -169,9 +170,7 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 
             if (playerIsMoving)
             {
-                //playerMove.HandleRunningJump();
-                playerMove.HandleNeutralJump();
-                playerMove.HandleSticklMovement(playerStats.airMoveSpeed, false);
+                prueba.HandleJump();
                 currentAction = ActionState.RuningJump;
                 playerState.cancelableAction = true;
                 playerAnimator.PlayAnimation("010 - RunJump");

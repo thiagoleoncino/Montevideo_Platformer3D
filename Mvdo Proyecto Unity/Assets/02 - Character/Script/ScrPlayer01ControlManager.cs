@@ -7,8 +7,6 @@ using static UnityEngine.EventSystems.PointerEventData;
 
 public class ScrPlayer01ControlManager : MonoBehaviour
 {
-    private ScrPlayer03ActionManager playerActions;
-
     public InputActionAsset inputActions;
 
     [HideInInspector] public InputAction inputActionStickIzquierdo;
@@ -50,7 +48,6 @@ public class ScrPlayer01ControlManager : MonoBehaviour
     private void Awake()
     {
         AssignActions();
-        playerActions = GetComponentInParent<ScrPlayer03ActionManager>();
     }
 
     protected virtual void OnEnable() => inputActions?.Enable();

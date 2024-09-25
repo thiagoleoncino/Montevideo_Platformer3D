@@ -10,7 +10,9 @@ public class ScrBehaviorStopJumping : StateMachineBehaviour
         {
             GameObject obj = animator.gameObject;
             ScrPlayer02StateManager stateManager = obj.GetComponent<ScrPlayer02StateManager>();
+            Scr_Prueba prueba = obj.GetComponent<Scr_Prueba>();
             stateManager.passiveAction = true;
+            prueba.Inertia = false;
         }
     }
 }
