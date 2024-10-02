@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\usuario\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\02 - character\\script\\behavior\\scrbehaviorstopjumping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\behavior\\scrbehaviorstopjumping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\usuario\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\02 - character\\script\\scrplayer06movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer06movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\usuario\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\02 - character\\script\\scrplayer03actionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer03actionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\usuario\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\02 - character\\script\\scrplayer06movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer06movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\02 - character\\script\\scrplayer01controlmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer01controlmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\usuario\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\02 - character\\script\\scr_prueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scr_prueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\02 - character\\script\\scrplayer02statemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer02statemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,27 +31,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ScrBehaviorStopJumping.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\Behavior\\ScrBehaviorStopJumping.cs",
-              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\Behavior\\ScrBehaviorStopJumping.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\Behavior\\ScrBehaviorStopJumping.cs",
-              "RelativeToolTip": "Assets\\02 - Character\\Script\\Behavior\\ScrBehaviorStopJumping.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:42:12.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "ScrPlayer06MovementManager.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer06MovementManager.cs",
               "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer06MovementManager.cs",
               "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer06MovementManager.cs",
               "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer06MovementManager.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwBwAAAAkAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwGMAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:17:11.991Z",
+              "WhenOpened": "2024-10-02T18:02:49.826Z",
               "EditorCaption": ""
             },
             {
@@ -62,22 +49,35 @@
               "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer03ActionManager.cs",
               "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer03ActionManager.cs",
               "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer03ActionManager.cs",
-              "ViewState": "AQIAAJ4AAAAAAAAAAAAAwK8AAAA+AAAA",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAwwJsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:12:05.207Z",
+              "WhenOpened": "2024-10-01T23:17:31.76Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Scr_Prueba.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\Scr_Prueba.cs",
-              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\Scr_Prueba.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\Scr_Prueba.cs",
-              "RelativeToolTip": "Assets\\02 - Character\\Script\\Scr_Prueba.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAwwDIAAAAFAAAA",
+              "Title": "ScrPlayer02StateManager.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer02StateManager.cs",
+              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer02StateManager.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer02StateManager.cs",
+              "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer02StateManager.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T00:09:33.077Z",
+              "WhenOpened": "2024-10-01T23:17:27.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ScrPlayer01ControlManager.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer01ControlManager.cs",
+              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer01ControlManager.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer01ControlManager.cs",
+              "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer01ControlManager.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T23:17:05.849Z",
               "EditorCaption": ""
             }
           ]

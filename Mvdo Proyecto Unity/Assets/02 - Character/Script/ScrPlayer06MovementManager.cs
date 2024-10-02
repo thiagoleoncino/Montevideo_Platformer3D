@@ -13,6 +13,8 @@ public class ScrPlayer06MovementManager : MonoBehaviour
     [HideInInspector] public Rigidbody rigidBody;
     private Transform cameraTransform;
     public Vector3 currentVelocity = Vector3.zero;
+    public bool Inertia;
+    private Vector3 jumpInertia;         // Para almacenar la velocidad cuando salta
 
     private void Awake()
     {
@@ -97,12 +99,25 @@ public class ScrPlayer06MovementManager : MonoBehaviour
 
     public void HandleRunningJump()
     {
-        // Aplica un impulso inicial en el eje Y para el salto y mantiene la velocidad en los ejes X/Z
-        Vector3 jumpVelocity = new Vector3(currentVelocity.x, playerStats.jumpForce, currentVelocity.z);
+        // Almacenar la velocidad en X/Z para mantener la inercia
+        jumpInertia = new Vector3(rigidBody.velocity.x, 0f, rigidBody.velocity.z);
 
-        // Actualiza la velocidad del rigidbody con el impulso del salto
-        rigidBody.velocity = jumpVelocity;
+        // Aplicar fuerza de salto
+        rigidBody.AddForce(Vector3.up * playerStats.jumpForce, ForceMode.Impulse);
+        Inertia = true;
     }
 
+    public void HandleAirInertia()
+    {
+        // Multiplicar el movimiento hacia adelante por la magnitud de currentVelocity para adaptarlo a la velocidad actual
+        Vector3 forwardMovement = transform.forward * currentVelocity.magnitude;
+        rigidBody.velocity = new Vector3(forwardMovement.x, rigidBody.velocity.y, forwardMovement.z); // Mantener la velocidad en Y (gravedad)
+
+        if (Inertia)
+        {
+            // Si hay inercia, mantener el movimiento hacia adelante
+            rigidBody.velocity = new Vector3(forwardMovement.x, rigidBody.velocity.y, forwardMovement.z);
+        }
+    }
 
 }

@@ -1,14 +1,6 @@
-Cambios:
-- Agregue Break (Animacion y funcion)
-- Agregue Crouch (Animacion, Funcion, Movimiento, Camara)
-- Agregue Golpe 1 y 2 (Animacion y Funcion)
-
 Queda:
-- Actualizar Code Document Scr Animations
-- Actualizar documentos con las acciones agregadas (Break, Crouch, Golpe)
-- Actualizar documetno de Action manager
-- Mejorar Break
-- Implementar Salto en Movimiento
+- Arreglar Inercia para que se ejecute solo en su funcion
+- Actualizar el documento
 
 Mejoras:
 - Timing y cancelacion de los ataques

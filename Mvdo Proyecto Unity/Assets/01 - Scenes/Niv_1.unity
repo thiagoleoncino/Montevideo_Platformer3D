@@ -3076,7 +3076,7 @@ PrefabInstance:
     - target: {fileID: 44449137930582380, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: prueba
       value: 
-      objectReference: {fileID: 1444193527}
+      objectReference: {fileID: 0}
     - target: {fileID: 2632781981428261630, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
       propertyPath: m_Constraints
       value: 112
@@ -14665,26 +14665,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1444193526 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8464542301083081655, guid: d48e72fa19035cd4480eb4fee25128c0, type: 3}
-  m_PrefabInstance: {fileID: 249782711}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1444193527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444193526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1bf471432b7e6647abb74d108913cd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  jumpForce: 2
-  Inertia: 0
 --- !u!43 &1477237580
 Mesh:
   m_ObjectHideFlags: 0

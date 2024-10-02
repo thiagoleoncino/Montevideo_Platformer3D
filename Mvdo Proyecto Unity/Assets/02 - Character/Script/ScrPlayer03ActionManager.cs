@@ -9,7 +9,8 @@ public class ScrPlayer03ActionManager : MonoBehaviour
     private ScrPlayer05StatsManager playerStats;
     private ScrPlayer06MovementManager playerMove;
     private ScrPlayer07AnimationManager playerAnimator;
-    public Scr_Prueba prueba;
+
+    public bool arreglar;
 
     public enum ActionState
     {
@@ -46,22 +47,24 @@ public class ScrPlayer03ActionManager : MonoBehaviour
                     GroundedMovementActions();
                     HandleGroundedAttackActions();
                     HandleJumpActions();
+                    HandleInertia(false);
                 }
 
             }
 
             if (playerState.airbornAction)
             {
-                prueba.HandleAirMovement();
-            }
+                HandleInertia(true);
 
-            if (playerState.passiveAction)
-            {
-                if (playerState.airbornAction)
+                if (playerState.passiveAction)
                 {
                     HandleAirbornActions();
                 }
             }
+
+            //HandleInertia();
+            
+            //playerMove.HandleAirInertia();
         }
     }
 
@@ -96,6 +99,7 @@ public class ScrPlayer03ActionManager : MonoBehaviour
         {
             HandleStandingActions();
         }
+
     }
 
     private void HandleStandingActions()
@@ -151,11 +155,22 @@ public class ScrPlayer03ActionManager : MonoBehaviour
         }
     }
 
+    private void HandleInertia(bool inertiaBool)
+    {
+        playerMove.Inertia = inertiaBool;
+
+        if(playerMove.Inertia)
+        {
+            playerMove.HandleAirInertia();
+        }
+    }
+
     private void HandleAirbornActions()
     {
-        //playerMove.HandleSticklMovement(playerStats.airMoveSpeed, false);
+        playerMove.HandleSticklMovement(playerStats.airMoveSpeed, false);
         currentAction = ActionState.Fall;
     }
+
     public void HandleJumpActions()
     {
         if(playerInputs.inputButton1)
@@ -170,13 +185,12 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 
             if (playerIsMoving)
             {
-                prueba.HandleJump();
+                playerMove.HandleRunningJump();
                 currentAction = ActionState.RuningJump;
                 playerState.cancelableAction = true;
                 playerAnimator.PlayAnimation("010 - RunJump");
             }
         }
-
     }
 
 }
