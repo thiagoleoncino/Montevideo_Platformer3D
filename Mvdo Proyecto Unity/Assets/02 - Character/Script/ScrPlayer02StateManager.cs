@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum SurfaceState
@@ -26,6 +27,8 @@ public enum MoveState
 public class ScrPlayer02StateManager : MonoBehaviour
 {
     public MoveState currentMoveState;
+
+    public bool actualColition;
 
     public bool objectCanMove
     {
@@ -106,6 +109,17 @@ public class ScrPlayer02StateManager : MonoBehaviour
             groundedAction = false;
             airbornAction = true;
         }
+    }
+
+    //NEW Detener Inercia al colisionar con algo
+    private void OnCollisionStay(Collision collision)
+    {
+        actualColition = collision.collider;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        actualColition = false;
     }
 
 }

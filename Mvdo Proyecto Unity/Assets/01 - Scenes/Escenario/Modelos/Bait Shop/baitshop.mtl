@@ -1,0 +1,29 @@
+# Material file for baitshop.obj
+
+newmtl baitshop
+	Ns 0
+	d 1
+	illum 2
+	Kd 1.0 1.0 1.0
+	Ks 0.0 0.0 0.0
+	Ka 0.2 0.2 0.2
+	map_Kd tex1_64x64_59cbcd9037b493c2_14a0b847a4755038_9.png
+
+newmtl metal
+	Ns 0
+	d 1
+	illum 2
+	Kd 1.0 1.0 1.0
+	Ks 0.0 0.0 0.0
+	Ka 0.2 0.2 0.2
+	map_Kd tex1_128x128_a5cad79413bf0aea_bfadadc56f001836_9.png
+
+newmtl door
+	Ns 0
+	d 1
+	illum 2
+	Kd 1.0 1.0 1.0
+	Ks 0.0 0.0 0.0
+	Ka 0.2 0.2 0.2
+	map_Kd tex1_64x64_4532cd1545a5ab5a_a95f0d50a8c9cb69_9.png
+

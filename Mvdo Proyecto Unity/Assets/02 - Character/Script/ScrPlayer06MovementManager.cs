@@ -7,7 +7,8 @@ public class ScrPlayer06MovementManager : MonoBehaviour
 {
     // Referencias a otros scripts
     private ScrPlayer01ControlManager playerInputs;
-    private ScrPlayer03ActionManager playerActions;
+    private ScrPlayer02StateManager playerState; //NEW
+    private ScrPlayer03ActionManager playerActions; 
     private ScrPlayer05StatsManager playerStats;
 
     [HideInInspector] public Rigidbody rigidBody;
@@ -24,7 +25,8 @@ public class ScrPlayer06MovementManager : MonoBehaviour
 
         //Scripts
         playerInputs = GetComponent<ScrPlayer01ControlManager>();
-        playerStats = GetComponent<ScrPlayer05StatsManager>();
+        playerState = GetComponent<ScrPlayer02StateManager>(); //NEW
+        playerStats = GetComponent<ScrPlayer05StatsManager>(); 
         playerActions = GetComponent<ScrPlayer03ActionManager>();
     }
 
@@ -117,6 +119,11 @@ public class ScrPlayer06MovementManager : MonoBehaviour
         {
             // Si hay inercia, mantener el movimiento hacia adelante
             rigidBody.velocity = new Vector3(forwardMovement.x, rigidBody.velocity.y, forwardMovement.z);
+
+            if(playerState.actualColition) //NEW Detener al impactar contra una superficie
+            {
+                rigidBody.velocity = new Vector3(0, rigidBody.velocity.y, 0);
+            }
         }
     }
 

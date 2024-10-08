@@ -1,8 +1,0 @@
-Queda:
-- Arreglar Inercia para que se ejecute solo en su funcion
-- Actualizar el documento
-
-Mejoras:
-- Timing y cancelacion de los ataques
-- Giro agachado menos bruzco
-- Giro mas natural del personaje

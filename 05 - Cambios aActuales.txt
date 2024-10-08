@@ -1,0 +1,14 @@
+Queda:
+- Actualizar el documento *****
+
+- Arreglar Inercia para que se ejecute solo en su funcion
+
+Mejoras:
+- Timing y cancelacion de los ataques
+- Giro agachado menos bruzco
+- Giro mas natural del personaje
+
+Scripts
+01: 
+	- actualStickDirection y previousStickDirection ahora son Enum en vez de Strings.
+	- Cambio de direccion convertida en una bool

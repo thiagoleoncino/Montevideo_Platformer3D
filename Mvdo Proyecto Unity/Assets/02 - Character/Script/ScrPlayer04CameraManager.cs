@@ -85,17 +85,17 @@ public class ScrPlayer04CameraManager : MonoBehaviour
 
     private float DetermineTargetRotationSpeed()
     {
-        switch (playerInputs.stickDirection)
+        switch (playerInputs.actualStickDirection) //NEW ADD
         {
-            case "Izquierda":
+            case EnumStickDirections.Left:
                 return -rotationSpeed;
-            case "Izquierda Diagonal Arriba":
-            case "Izquierda Diagonal Abajo":
+            case EnumStickDirections.LeftDiagonalDown:
+            case EnumStickDirections.LeftDiagonalUp:
                 return -rotationSpeed / 2;
-            case "Derecha":
+            case EnumStickDirections.Right:
                 return rotationSpeed;
-            case "Derecha Diagonal Arriba":
-            case "Derecha Diagonal Abajo":
+            case EnumStickDirections.RightDiagonalUp:
+            case EnumStickDirections.RightDiagonalDown:
                 return rotationSpeed / 2;
             default:
                 return 0f;
