@@ -54,11 +54,11 @@ public class ScrPlayer03ActionManager : MonoBehaviour
 
             if (playerState.airbornAction)
             {
-                HandleInertia(true);
+               HandleInertia(true);
 
                 if (playerState.passiveAction)
                 {
-                    HandleAirbornActions();
+                   HandleAirbornActions();
                 }
             }
 

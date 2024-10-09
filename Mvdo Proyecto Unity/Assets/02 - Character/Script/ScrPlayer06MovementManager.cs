@@ -30,40 +30,60 @@ public class ScrPlayer06MovementManager : MonoBehaviour
         playerActions = GetComponent<ScrPlayer03ActionManager>();
     }
 
-    public void HandleSticklMovement(float speedStat, bool aceleration_desaceleration)
+    //NEW MODIFICADO
+    public void HandleSticklMovement(float speedStat, bool useAcceleration)
     {
         Vector2 stickInput = playerInputs.stickInput;
 
+        // Si no hay input del stick, desacelerar.
         if (stickInput == Vector2.zero)
         {
-            if (!playerActions.playerIsCrouching)
-            {
-                ApplyDeceleration();
-            }
+            ApplyDeceleration();
             return;
         }
 
-        Vector3 moveDirection = CalculateMoveDirection(stickInput);
+        // El personaje siempre se moverá hacia adelante en la dirección que está mirando
+        Vector3 moveDirection = transform.forward;
+
         float targetSpeed;
 
-        if (!aceleration_desaceleration) // Si el personaje está agachado, usar crouchSpeed y no aplicara aceleración/desaceleración
+        // Si no se usa aceleración, asignar la velocidad directa.
+        if (!useAcceleration)
         {
             targetSpeed = speedStat;
             currentVelocity = moveDirection * targetSpeed;
         }
-
-        if (aceleration_desaceleration) // Si el personaje está parado, usar walkSpeed y si aplicara aceleración/desaceleración
+        // Si se usa aceleración, ajustar la velocidad de acuerdo al input del stick
+        else
         {
-            float magnitude = stickInput.magnitude;
-            targetSpeed = Mathf.Lerp(0, speedStat, magnitude);
-            currentVelocity = Vector3.Lerp(currentVelocity, moveDirection * targetSpeed, Time.fixedDeltaTime * playerStats.acceleration);
+            float magnitude = stickInput.magnitude; // Magnitud del input del stick
+            targetSpeed = Mathf.Lerp(0, speedStat, magnitude); // Ajusta la velocidad según el input del stick
+            currentVelocity = moveDirection * targetSpeed; //NEW
         }
 
+        // Aplicar el movimiento hacia adelante
         Vector3 movement = currentVelocity * Time.fixedDeltaTime;
         rigidBody.MovePosition(rigidBody.position + movement);
 
-        RotateTowardsMovementDirection(moveDirection);
-    } //NEW
+        // Mientras se mueve hacia adelante, rotar hacia la dirección del stick
+        RotateTowardsStickDirection(stickInput);
+    }
+
+    // NEW Rotar el personaje hacia la dirección del stick 
+    private void RotateTowardsStickDirection(Vector2 stickInput)
+    {
+        if (stickInput != Vector2.zero)
+        {
+            // Calcular la dirección en base al input del stick
+            Vector3 targetDirection = CalculateMoveDirection(stickInput);
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+
+            // Suavizar la rotación usando Slerp
+            Quaternion newRotation = Quaternion.Slerp(rigidBody.rotation, targetRotation, Time.fixedDeltaTime * playerStats.turnResistance);
+            rigidBody.MoveRotation(newRotation);
+        }
+    }
+
 
     private Vector3 CalculateMoveDirection(Vector2 stickInput)
     {
@@ -76,15 +96,7 @@ public class ScrPlayer06MovementManager : MonoBehaviour
         return (stickInput.x * right + stickInput.y * forward).normalized;
     }
 
-    private void RotateTowardsMovementDirection(Vector3 moveDirection)
-    {
-        if (moveDirection != Vector3.zero)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-            Quaternion newRotation = Quaternion.Slerp(rigidBody.rotation, targetRotation, Time.fixedDeltaTime * playerStats.turnResistance);
-            rigidBody.MoveRotation(newRotation);
-        }
-    }
+
 
     private void ApplyDeceleration()
     {

@@ -2,6 +2,7 @@ Queda:
 - Actualizar el documento *****
 
 - Arreglar Inercia para que se ejecute solo en su funcion
+- Agregar NPC (Prefab, Script)
 
 Mejoras:
 - Timing y cancelacion de los ataques
