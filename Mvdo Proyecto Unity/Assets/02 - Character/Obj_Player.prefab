@@ -250,9 +250,12 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   stickInput: {x: 0, y: 0}
-  stickDirection: 
+  actualStickDirection: 0
   stickMagnitude: 0
   stickThreshold: 0.9
+  previousStickDirection: 0
+  brakeActive: 0
+  directionChanged: 0
   inputButton1: 0
   inputButton2: 0
   inputButton3: 0
@@ -263,9 +266,6 @@ MonoBehaviour:
   InputRightShoulder2: 0
   inputButtonStart: 0
   inputButtonSelect: 0
-  brakeActive: 0
-  previousStickDirection: 
-  directionChanged: 0
 --- !u!114 &2023047668564889251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMoveState: 0
+  actualColition: 0
   currentSurfaceState: 1
   currentActionState: 0
   groundCheckCollider: {fileID: 8771166758160338057}
@@ -294,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d64b0621db80844a37cd7e51ce4637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arreglar: 0
   currentAction: 0
   playerIsMoving: 0
   playerIsCrouching: 0
@@ -331,6 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 0}
   currentVelocity: {x: 0, y: 0, z: 0}
+  Inertia: 0
 --- !u!114 &8771166758336609517
 MonoBehaviour:
   m_ObjectHideFlags: 0

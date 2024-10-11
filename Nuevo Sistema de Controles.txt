@@ -1,0 +1,33 @@
+- Copie el modelo base y le incorpore el modelo del personaje
+
+- Scripts:
+	> Cgaracter Body -> Cambie Width a 0.5 y Height a 1
+	> Character Actor
+		> Character Brain
+		> Character State Controller
+		> Normal Movment
+		> Step Lerp
+
+- Al cambiar Width a 0.5 el perosnaje se agachaba constantemente, lo solucione cambiando
+en el Blend Tree del Animator los parametros Pos Y de CrouchIdle y CrouchMoving a 2
+
+- Cambie los Inputs Project Settings > Inputs Managerde
+					> WASD al Stick Izquierdo
+					> Salto con la X (joystick button 1)
+					> Correr con el Cuadrado (joystick button 0)
+					> Agachado con el Circulo (joystick button 2)
+
+- Las Variables de Movimiento se maneja en States > Normal Movment Script
+		> Base Speed Limit - La velocidad del personaje al caminar
+		> Boost Speed Limit - La velocidad del personaje al correr
+		> Jump Apex Height - Altura del Salto	
+		> Jump Apez Duration - La velocidad del Salto		
+		> Avaliable not Grounde Jump - Los saltos extra	
+
+- ¡IMPORTANTE!
+	> El personaje se movera en base a lo que este en Character State Controller > Movment reference Parameters
+			> Para que se mueva en base a la camara usamos MRM: External y ER: Transform de la camra
+
+- La camara se mueve con el codigo de Scr_Prueba. Seguimos Usanod Virtual Camara para eso.
+					> Girar camara Trigger Izquierdo (joystick button 4)
+					> Girar camara Trigger Derecho (joystick button 5)

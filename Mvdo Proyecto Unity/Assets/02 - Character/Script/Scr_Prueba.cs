@@ -4,56 +4,39 @@ using UnityEngine;
 
 public class Scr_Prueba : MonoBehaviour
 {
-    public float moveSpeed = 5f;         // Velocidad de movimiento en X/Z
-    public float jumpForce = 7f;         // Fuerza del salto
-    public bool Inertia = false;       // Para verificar si está en el suelo
-    private Rigidbody rb;
-    private Vector3 jumpInertia;         // Para almacenar la velocidad cuando salta
-    private ScrPlayer01ControlManager control;
+    public Transform cameraTransform;
+    public float rotationAngle = 45f; // Ángulo de rotación por segundo
+    public float rotationSpeed = 5f;  // Velocidad de rotación suave
+    private Quaternion targetRotation; // Rotación objetivo
 
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        control = GetComponent<ScrPlayer01ControlManager>();
+        targetRotation = cameraTransform.rotation; // Inicializamos la rotación objetivo como la actual
     }
 
-    void Update()
+    private void Update()
     {
-        //HandleGroundMovement();
-        // HandleJump();
-    }
+        // Inputs para los triggers izquierdo y derecho (mantener presionados)
+        bool leftTrigger = Input.GetButton("Fire1");
+        bool rightTrigger = Input.GetButton("Fire2");
 
-    public void HandleGroundMovement()
-    {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
-
-        Vector3 move = new Vector3(moveX, 0f, moveZ) * moveSpeed;
-        move = transform.TransformDirection(move);  // Para que se mueva en la dirección en que el objeto está mirando
-
-        rb.velocity = new Vector3(move.x, rb.velocity.y, move.z);  // Mantener la velocidad en Y (gravedad)
-    }
-
-    public void HandleAirMovement()
-    {
-        // Mantener la inercia cuando está en el aire
-        rb.velocity = new Vector3(jumpInertia.x, rb.velocity.y, jumpInertia.z);
-
-        // Movimiento automático hacia adelante mientras salta
-        if (Inertia)
+        if (leftTrigger)
         {
-            Vector3 forwardMovement = transform.forward * moveSpeed; // Movimiento hacia adelante
-            rb.velocity = new Vector3(forwardMovement.x, rb.velocity.y, forwardMovement.z); // Mantener la velocidad en Y (gravedad)
+            RotateCameraSmoothly(-rotationAngle * Time.deltaTime); // Rota gradualmente a la izquierda
         }
+
+        if (rightTrigger)
+        {
+            RotateCameraSmoothly(rotationAngle * Time.deltaTime); // Rota gradualmente a la derecha
+        }
+
+        // Aplicamos la rotación suavemente hacia la rotación objetivo
+        cameraTransform.rotation = Quaternion.Lerp(cameraTransform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
 
-    public void HandleJump()
+    private void RotateCameraSmoothly(float angle)
     {
-        // Almacenar la velocidad en X/Z para mantener la inercia
-        jumpInertia = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-        // Aplicar fuerza de salto
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        Inertia = true;
+        // Calcula la nueva rotación objetivo sumando el ángulo especificado
+        targetRotation *= Quaternion.Euler(0f, angle, 0f);
     }
 }
