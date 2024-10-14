@@ -18,11 +18,13 @@ en el Blend Tree del Animator los parametros Pos Y de CrouchIdle y CrouchMoving 
 					> Agachado con el Circulo (joystick button 2)
 
 - Las Variables de Movimiento se maneja en States > Normal Movment Script
-		> Base Speed Limit - La velocidad del personaje al caminar
-		> Boost Speed Limit - La velocidad del personaje al correr
-		> Jump Apex Height - Altura del Salto	
-		> Jump Apez Duration - La velocidad del Salto		
-		> Avaliable not Grounde Jump - Los saltos extra	
+		> Base Speed Limit - La velocidad del personaje al caminar > 3
+		> Boost Speed Limit - La velocidad del personaje al correr > 5
+		> Jump Apex Height - Altura del Salto > 1
+		> Jump Apez Duration - La velocidad del Salto > 0.35		
+		> Avaliable not Grounde Jump - Los saltos extra	> 1
+		> Hight Ratio - La altura del collider al agacharse en realcion a la actual > 0.5
+		> Speed Multiplaier - La velocidad del personaje al agacharse > 1
 
 - ¡IMPORTANTE!
 	> El personaje se movera en base a lo que este en Character State Controller > Movment reference Parameters
