@@ -25262,6 +25262,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 798270283}
+    - target: {fileID: 3853322617309431420, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_SelectedEdges.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853322617309431420, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_SelectedFaces.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853322617309431420, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
+      propertyPath: m_SelectedVertices.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3853322617352470809, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -25780,11 +25792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3853322618275307452, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_SelectedEdges.Array.size
-      value: 4
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3853322618275307452, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_SelectedFaces.Array.size
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3853322618275307452, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_Positions.Array.data[0].y
@@ -25872,7 +25884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3853322618275307452, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_SelectedVertices.Array.size
-      value: 4
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3853322618275307452, guid: e4cad9c03d3825e43a6ec0d28d7bbee3, type: 3}
       propertyPath: m_SelectedEdges.Array.data[0].a
