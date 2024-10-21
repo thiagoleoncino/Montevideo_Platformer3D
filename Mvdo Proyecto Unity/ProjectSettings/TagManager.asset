@@ -13,6 +13,8 @@ TagManager:
   - Boost
   - WallSlide
   - JumpDown
+  - Ground
+  - PlayerDetection
   layers:
   - Default
   - TransparentFX
