@@ -14,7 +14,8 @@ en el Blend Tree del Animator los parametros Pos Y de CrouchIdle y CrouchMoving 
 - Cambie los Inputs Project Settings > Inputs Managerde
 					> WASD al Stick Izquierdo
 					> Salto con la X (joystick button 1)
-					> Correr con el Cuadrado (joystick button 0)
+					> Golpe con el Cuadrado (joystick button 0)
+					> Correr con el R2 (joystick button 7)
 					> Agachado con el Circulo (joystick button 2)
 
 - Las Variables de Movimiento se maneja en States > Normal Movment Script
@@ -33,3 +34,8 @@ en el Blend Tree del Animator los parametros Pos Y de CrouchIdle y CrouchMoving 
 - La camara se mueve con el codigo de Scr_Prueba. Seguimos Usanod Virtual Camara para eso.
 					> Girar camara Trigger Izquierdo (joystick button 4)
 					> Girar camara Trigger Derecho (joystick button 5)
+
+- Crear Nueva Accion
+	> Agregar nueva accion en Default Character Actions
+		> Ej> Bool Action - Element - Punch
+	> Agregar accion y Input en - Porject Settings - Input Manager (Mientras teengan el mismo nombre el Character Brain lo va a detectar)

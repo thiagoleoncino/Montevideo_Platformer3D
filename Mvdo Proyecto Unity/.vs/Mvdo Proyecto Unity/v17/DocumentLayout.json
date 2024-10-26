@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\03 - prefab\\monedas\\scr_monedas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\03 - prefab\\monedas\\scr_monedas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\09 - packages\\character controller pro\\implementation\\scripts\\character\\actions\\characterbrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|solutionrelative:assets\\09 - packages\\character controller pro\\implementation\\scripts\\character\\actions\\characterbrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\0999 - npc\\0 - base\\scripts\\scr_npc_interaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\0999 - npc\\0 - base\\scripts\\scr_npc_interaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\02 - character\\script\\scr_prueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scr_prueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\02 - character\\script\\scrplayer04cameramanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scrplayer04cameramanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\dash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|solutionrelative:assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\dash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Scr_NPC_Interaction.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\0999 - NPC\\0 - Base\\Scripts\\Scr_NPC_Interaction.cs",
-              "RelativeDocumentMoniker": "Assets\\0999 - NPC\\0 - Base\\Scripts\\Scr_NPC_Interaction.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\0999 - NPC\\0 - Base\\Scripts\\Scr_NPC_Interaction.cs",
-              "RelativeToolTip": "Assets\\0999 - NPC\\0 - Base\\Scripts\\Scr_NPC_Interaction.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T20:58:04.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Scr_Monedas.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\03 - Prefab\\Monedas\\Scr_Monedas.cs",
-              "RelativeDocumentMoniker": "Assets\\03 - Prefab\\Monedas\\Scr_Monedas.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\03 - Prefab\\Monedas\\Scr_Monedas.cs",
-              "RelativeToolTip": "Assets\\03 - Prefab\\Monedas\\Scr_Monedas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Title": "CharacterBrain.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\Actions\\CharacterBrain.cs",
+              "RelativeDocumentMoniker": "Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\Actions\\CharacterBrain.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\Actions\\CharacterBrain.cs",
+              "RelativeToolTip": "Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\Actions\\CharacterBrain.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T20:57:33.124Z",
+              "WhenOpened": "2024-10-26T23:43:21.412Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Scr_Prueba.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\Scr_Prueba.cs",
-              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\Scr_Prueba.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\Scr_Prueba.cs",
-              "RelativeToolTip": "Assets\\02 - Character\\Script\\Scr_Prueba.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAIBJwA4AAAAFAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Dash.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Dash.cs",
+              "RelativeDocumentMoniker": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Dash.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Dash.cs",
+              "RelativeToolTip": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Dash.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAmwBsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T20:51:33.613Z",
+              "WhenOpened": "2024-10-26T23:10:26.623Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ScrPlayer04CameraManager.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer04CameraManager.cs",
-              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\ScrPlayer04CameraManager.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\ScrPlayer04CameraManager.cs",
-              "RelativeToolTip": "Assets\\02 - Character\\Script\\ScrPlayer04CameraManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T22:33:51.351Z"
             }
           ]
         }
