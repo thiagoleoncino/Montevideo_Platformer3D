@@ -13,8 +13,8 @@ namespace Lightbug.CharacterControllerPro.Demo
         InputDirection
     }
 
-    [AddComponentMenu("Character Controller Pro/Demo/Character/States/Dash")]
-    public class Dash : CharacterState
+    [AddComponentMenu("Character Controller Pro/Demo/Character/States/Dash1")]
+    public class Dash1 : CharacterState
     {
 
         [Min(0f)]

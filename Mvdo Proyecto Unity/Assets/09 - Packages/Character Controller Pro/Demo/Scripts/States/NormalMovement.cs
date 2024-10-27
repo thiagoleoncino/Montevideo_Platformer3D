@@ -2,6 +2,9 @@ using UnityEngine;
 using Lightbug.CharacterControllerPro.Core;
 using Lightbug.Utilities;
 using Lightbug.CharacterControllerPro.Implementation;
+using System.Collections;
+using System.Collections.Generic;
+using Lightbug.CharacterControllerPro.Demo;
 
 namespace Lightbug.CharacterControllerPro.Demo
 {
@@ -168,6 +171,10 @@ namespace Lightbug.CharacterControllerPro.Demo
                     CharacterStateController.EnqueueTransition<WallSlide>();
 
                 CharacterStateController.EnqueueTransition<LedgeHanging>();
+            }
+            else if (CharacterActions.punch.Started)
+            {
+                CharacterStateController.EnqueueTransition<Scr_Attack>();
             }
         }
 

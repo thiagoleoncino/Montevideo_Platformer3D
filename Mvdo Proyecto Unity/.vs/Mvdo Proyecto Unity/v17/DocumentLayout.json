@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\09 - packages\\character controller pro\\implementation\\scripts\\character\\actions\\characterbrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|solutionrelative:assets\\09 - packages\\character controller pro\\implementation\\scripts\\character\\actions\\characterbrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\scr_attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|solutionrelative:assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\scr_attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\dash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|solutionrelative:assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\dash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\normalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|solutionrelative:assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\normalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CharacterBrain.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\Actions\\CharacterBrain.cs",
-              "RelativeDocumentMoniker": "Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\Actions\\CharacterBrain.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\Actions\\CharacterBrain.cs",
-              "RelativeToolTip": "Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\Actions\\CharacterBrain.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Title": "Scr_Attack.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Scr_Attack.cs",
+              "RelativeDocumentMoniker": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Scr_Attack.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Scr_Attack.cs",
+              "RelativeToolTip": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Scr_Attack.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T23:43:21.412Z",
+              "WhenOpened": "2024-10-27T22:12:11.469Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dash.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Dash.cs",
-              "RelativeDocumentMoniker": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Dash.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Dash.cs",
-              "RelativeToolTip": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Dash.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAmwBsAAAAYAAAAAAAAAA==",
+              "Title": "NormalMovement.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\NormalMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\NormalMovement.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\NormalMovement.cs",
+              "RelativeToolTip": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\NormalMovement.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAswLIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T23:10:26.623Z",
+              "WhenOpened": "2024-10-27T21:36:51.053Z",
               "EditorCaption": ""
             }
           ]

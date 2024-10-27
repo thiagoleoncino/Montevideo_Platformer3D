@@ -23,10 +23,26 @@ namespace Lightbug.CharacterControllerPro.Implementation
     [AddComponentMenu("Character Controller Pro/Implementation/Character/Character State Controller")]
     public class CharacterStateController : MonoBehaviour
     {
+        [Tooltip("Current character state")]
+        [SerializeField]
+        private CharacterState currentState; // Serializado
+
+        public CharacterState CurrentCharacterState
+        {
+            get => currentState;
+            private set => currentState = value;
+        }
+
+        void UpdateCurrentState()
+        {
+            currentState = CurrentState; // Actualiza el estado actual
+        }
+
         [Tooltip("The state used to start the state machine. It is necessary for the state to be not-null, active and enabled. Otherwise, " + 
             "the state machine will not run.")]
         [UnityEngine.Serialization.FormerlySerializedAs("currentState")]
         public CharacterState initialState = null;
+
 
         [CustomClassDrawer]
         [SerializeField]
@@ -354,6 +370,8 @@ namespace Lightbug.CharacterControllerPro.Implementation
 
         void FixedUpdate()
         {
+            UpdateCurrentState(); // Actualiza el estado antes de procesar cualquier lógica
+
             if (!machineStarted)
             {
                 if (initialState == null)

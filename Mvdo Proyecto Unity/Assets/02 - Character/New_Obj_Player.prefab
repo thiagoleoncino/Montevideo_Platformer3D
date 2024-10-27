@@ -104,6 +104,8 @@ GameObject:
   - component: {fileID: 7863018939276595012}
   - component: {fileID: 7863018939276595021}
   - component: {fileID: 7863018939276595022}
+  - component: {fileID: 170881559}
+  - component: {fileID: 170881563}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -138,7 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991c552c8efe8914186b0d06951c5a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialState: {fileID: 7863018939276595022}
+  currentState: {fileID: 0}
+  initialState: {fileID: 170881563}
   movementReferenceParameters:
     movementReferenceMode: 1
     externalReference: {fileID: 0}
@@ -283,6 +286,66 @@ MonoBehaviour:
   horizontalAxisParameter: HorizontalAxis
   verticalAxisParameter: VerticalAxis
   heightParameter: Height
+--- !u!114 &170881559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7863018939276595013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de174a927f9d1a44b933feb53ca447ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overrideAnimatorController: 1
+  runtimeAnimatorController: {fileID: 9100000, guid: 3e01f914ef0edd349a9e2792bea8a20d, type: 2}
+  initialVelocity: 12
+  duration: 0.4
+  movementCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: -1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  availableNotGroundedDashes: 1
+  ignoreSpeedMultipliers: 0
+  forceNotGrounded: 1
+  cancelOnContact: 1
+  contactVelocityTolerance: 5
+--- !u!114 &170881563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7863018939276595013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d141a2b52575340846ec1e22e959cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overrideAnimatorController: 1
+  runtimeAnimatorController: {fileID: 9100000, guid: 292239d9e09085b4c9f0823183298a4c, type: 2}
+  punchButton: 0
 --- !u!1 &7863018939329465059
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +408,8 @@ MonoBehaviour:
       value: 0
     crouch:
       value: 0
+    punch:
+      value: 0
     pitch:
       value: 0
     roll:
@@ -361,7 +426,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7863018939690652944}
   - component: {fileID: 7863018939690652951}
-  - component: {fileID: 8087122232457839717}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -401,27 +465,6 @@ MonoBehaviour:
   negativeDisplacementSpeed: 40
   recoveryDuration: 1
   maxRecoverySpeed: 200
---- !u!95 &8087122232457839717
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7863018939690652945}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 91930fdaac4aace43ac69d60bb139b54, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7863018940254223505
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,8 +952,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4557834185776835037, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4557834185776835037, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4c77323136b9524478f3a5c86ed70c71, type: 2}
     - target: {fileID: 4655969950934216104, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.016483398

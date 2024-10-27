@@ -39,3 +39,8 @@ en el Blend Tree del Animator los parametros Pos Y de CrouchIdle y CrouchMoving 
 	> Agregar nueva accion en Default Character Actions
 		> Ej> Bool Action - Element - Punch
 	> Agregar accion y Input en - Porject Settings - Input Manager (Mientras teengan el mismo nombre el Character Brain lo va a detectar)
+	> Agregar deteccion simple en el script
+		> if (Input.GetButton("Punch"))
+	> Crear Script con la base de YourCustomStat script en la pagina de documentacion.
+	> Crear y agregar Animator Controller para las animaciones de la accion
+	> El Script debe estar localizado en 09-Packages/Character Controller Pro/Demo/Script/State, esto para que se pueda referenciar en otros scripts (Por ahora)
