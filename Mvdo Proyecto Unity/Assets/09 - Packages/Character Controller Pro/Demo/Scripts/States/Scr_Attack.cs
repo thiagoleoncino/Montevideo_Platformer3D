@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Lightbug.CharacterControllerPro.Implementation;
 using Lightbug.CharacterControllerPro.Demo;
+using UnityEditor;
 
 namespace Lightbug.CharacterControllerPro.Demo
 {
@@ -11,7 +12,8 @@ namespace Lightbug.CharacterControllerPro.Demo
     public class Scr_Attack : CharacterState
     {
         public bool punchButton;
-        private Animator animator;
+        public Animator animator;
+        public NormalMovement moveScript;
 
         private void Update()
         {
@@ -21,14 +23,15 @@ namespace Lightbug.CharacterControllerPro.Demo
         protected override void Awake()
         {
             base.Awake();
-            animator = CharacterActor.Animator;
         }
 
-        public override void CheckExitTransition() //Condiciones para salir de este estado
+        public override void CheckExitTransition() // Condiciones para salir de este estado
         {
-            if (punchButton) //Si el boton es presionado
+            // Si la animación actual ha terminado, transiciona a NormalMovement
+            AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0);
+            if (currentState.IsName("01 - Attack") && currentState.normalizedTime >= 1f)
             {
-                //CharacterStateController.EnqueueTransition<NormalMovement>(); //Se pone el estado en cola
+                CharacterStateController.EnqueueTransition<NormalMovement>(); // Se pone el estado en cola
             }
         }
 
@@ -41,7 +44,7 @@ namespace Lightbug.CharacterControllerPro.Demo
         // Write your update code here
         public override void UpdateBehaviour(float dt)
         {
+            CharacterActor.PlanarVelocity = Vector3.zero;
         }
     }
 }
-

@@ -816,9 +816,3 @@ namespace Lightbug.CharacterControllerPro.Demo
         }
     }
 }
-
-
-
-
-
-
