@@ -38,7 +38,10 @@ namespace Lightbug.CharacterControllerPro.Demo
         // Write your transitions here
         public override bool CheckEnterTransition(CharacterState fromState)
         {
-            return base.CheckEnterTransition(fromState);
+            if (!CharacterActor.IsGrounded)
+                return false;
+
+            return true;
         }
 
         // Write your update code here

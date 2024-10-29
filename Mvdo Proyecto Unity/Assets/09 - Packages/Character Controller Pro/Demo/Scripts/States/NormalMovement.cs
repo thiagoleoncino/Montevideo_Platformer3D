@@ -151,6 +151,10 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         public override void CheckExitTransition()
         {
+            if (CharacterActions.punch.Started)
+            {
+                CharacterStateController.EnqueueTransition<Scr_Attack>();
+            }
 
             if (CharacterActions.jetPack.value)
             {
@@ -171,10 +175,6 @@ namespace Lightbug.CharacterControllerPro.Demo
                     CharacterStateController.EnqueueTransition<WallSlide>();
 
                 CharacterStateController.EnqueueTransition<LedgeHanging>();
-            }
-            else if (CharacterActions.punch.Started)
-            {
-                CharacterStateController.EnqueueTransition<Scr_Attack>();
             }
         }
 

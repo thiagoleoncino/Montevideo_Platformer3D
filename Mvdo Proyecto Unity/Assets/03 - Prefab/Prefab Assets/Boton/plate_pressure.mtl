@@ -1,0 +1,11 @@
+# Material file for plate_pressure.obj
+
+newmtl pressure_plate
+	Ns 0
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 0.2 0.2 0.2
+	map_Kd tex1_128x128_m_98e70750b3a090ea_14.png
+
