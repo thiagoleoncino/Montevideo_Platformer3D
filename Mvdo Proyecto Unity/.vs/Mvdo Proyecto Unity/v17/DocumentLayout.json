@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\03 - prefab\\prefab assets\\moneda10\\scr_monedas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\09 - scripts reusables\\scr_girarz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\09 - scripts reusables\\scr_girarz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\09 - scripts reusables\\scr_girary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\09 - scripts reusables\\scr_girary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\09 - scripts reusables\\scr_agarraritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\09 - scripts reusables\\scr_agarraritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\03 - prefab\\prefab assets\\moneda10\\scr_monedas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\03 - prefab\\prefab assets\\moneda10\\scr_monedas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\03 - prefab\\prefab assets\\boton\\scr_boton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\03 - prefab\\prefab assets\\boton\\scr_boton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\09 - scripts reusables\\scr_seguircamara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\09 - scripts reusables\\scr_seguircamara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\03 - prefab\\prefab assets\\crates\\scr_crate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\03 - prefab\\prefab assets\\crates\\scr_crate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\scr_attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|solutionrelative:assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\scr_attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\normalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|solutionrelative:assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\normalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\07 - effectos\\scr_effect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\07 - effectos\\scr_effect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,64 +39,76 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Scr_Monedas.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\03 - Prefab\\Prefab Assets\\Moneda10\\Scr_Monedas.cs",
-              "RelativeDocumentMoniker": "Assets\\03 - Prefab\\Prefab Assets\\Moneda10\\Scr_Monedas.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\03 - Prefab\\Prefab Assets\\Moneda10\\Scr_Monedas.cs",
-              "RelativeToolTip": "Assets\\03 - Prefab\\Prefab Assets\\Moneda10\\Scr_Monedas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Scr_GirarZ.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Scripts Reusables\\Scr_GirarZ.cs",
+              "RelativeDocumentMoniker": "Assets\\09 - Scripts Reusables\\Scr_GirarZ.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Scripts Reusables\\Scr_GirarZ.cs",
+              "RelativeToolTip": "Assets\\09 - Scripts Reusables\\Scr_GirarZ.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T23:36:04.625Z",
+              "WhenOpened": "2024-11-04T01:20:34.782Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Scr_Boton.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\03 - Prefab\\Prefab Assets\\Boton\\Scr_Boton.cs",
-              "RelativeDocumentMoniker": "Assets\\03 - Prefab\\Prefab Assets\\Boton\\Scr_Boton.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\03 - Prefab\\Prefab Assets\\Boton\\Scr_Boton.cs",
-              "RelativeToolTip": "Assets\\03 - Prefab\\Prefab Assets\\Boton\\Scr_Boton.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Title": "Scr_GirarY.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Scripts Reusables\\Scr_GirarY.cs",
+              "RelativeDocumentMoniker": "Assets\\09 - Scripts Reusables\\Scr_GirarY.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Scripts Reusables\\Scr_GirarY.cs",
+              "RelativeToolTip": "Assets\\09 - Scripts Reusables\\Scr_GirarY.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T01:16:29.873Z",
+              "WhenOpened": "2024-11-04T01:11:33.062Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Scr_Crate.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\03 - Prefab\\Prefab Assets\\Crates\\Scr_Crate.cs",
-              "RelativeDocumentMoniker": "Assets\\03 - Prefab\\Prefab Assets\\Crates\\Scr_Crate.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\03 - Prefab\\Prefab Assets\\Crates\\Scr_Crate.cs",
-              "RelativeToolTip": "Assets\\03 - Prefab\\Prefab Assets\\Crates\\Scr_Crate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Scr_Monedas.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\03 - Prefab\\Prefab Assets\\Moneda10\\Scr_Monedas.cs",
+              "RelativeDocumentMoniker": "Assets\\03 - Prefab\\Prefab Assets\\Moneda10\\Scr_Monedas.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\03 - Prefab\\Prefab Assets\\Moneda10\\Scr_Monedas.cs",
+              "RelativeToolTip": "Assets\\03 - Prefab\\Prefab Assets\\Moneda10\\Scr_Monedas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T19:16:29.931Z"
+              "WhenOpened": "2024-11-04T01:08:28.031Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Scr_Attack.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Scr_Attack.cs",
-              "RelativeDocumentMoniker": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Scr_Attack.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Scr_Attack.cs",
-              "RelativeToolTip": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Scr_Attack.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACgAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Scr_AgarrarITem.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Scripts Reusables\\Scr_AgarrarITem.cs",
+              "RelativeDocumentMoniker": "Assets\\09 - Scripts Reusables\\Scr_AgarrarITem.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Scripts Reusables\\Scr_AgarrarITem.cs",
+              "RelativeToolTip": "Assets\\09 - Scripts Reusables\\Scr_AgarrarITem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T22:12:11.469Z"
+              "WhenOpened": "2024-11-04T01:08:19.514Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "NormalMovement.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\NormalMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\NormalMovement.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\NormalMovement.cs",
-              "RelativeToolTip": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\NormalMovement.cs",
-              "ViewState": "AgIAAJsAAAAAAAAAAAAnwLEAAAANAAAAAAAAAA==",
+              "Title": "Scr_SeguirCamara.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Scripts Reusables\\Scr_SeguirCamara.cs",
+              "RelativeDocumentMoniker": "Assets\\09 - Scripts Reusables\\Scr_SeguirCamara.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Scripts Reusables\\Scr_SeguirCamara.cs",
+              "RelativeToolTip": "Assets\\09 - Scripts Reusables\\Scr_SeguirCamara.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T21:36:51.053Z"
+              "WhenOpened": "2024-11-04T01:00:15.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Scr_Effect1.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\07 - Effectos\\Scr_Effect1.cs",
+              "RelativeDocumentMoniker": "Assets\\07 - Effectos\\Scr_Effect1.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\07 - Effectos\\Scr_Effect1.cs",
+              "RelativeToolTip": "Assets\\07 - Effectos\\Scr_Effect1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T00:58:32.418Z"
             }
           ]
         }
