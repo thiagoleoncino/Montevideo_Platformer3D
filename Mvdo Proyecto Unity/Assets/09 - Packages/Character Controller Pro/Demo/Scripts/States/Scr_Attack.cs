@@ -11,12 +11,22 @@ namespace Lightbug.CharacterControllerPro.Demo
 
     public class Scr_Attack : CharacterState
     {
-        public bool punchButton;
         public Animator animator;
-        public NormalMovement moveScript;
+
+        [Space(10)]
+
+        public bool playerIsGrounded;
+        public bool punchButton;
+
+        [Space(10)]
+
+        [SerializeField]
+        protected string inputAttackParameter = "InputAttack";
+
 
         private void Update()
         {
+            playerIsGrounded = CharacterActor.IsGrounded;
             punchButton = Input.GetButton("Punch");
         }
 
@@ -24,14 +34,15 @@ namespace Lightbug.CharacterControllerPro.Demo
         {
             base.Awake();
         }
-
-        public override void CheckExitTransition() // Condiciones para salir de este estado
+        
+        // Condiciones para salir de este estado
+        public override void CheckExitTransition() 
         {
-            // Si la animación actual ha terminado, transiciona a NormalMovement
+            // Si la animación actual es Idle
             AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0);
-            if (currentState.IsName("01 - Attack") && currentState.normalizedTime >= 1f)
+            if (currentState.IsName("001 - Idle"))
             {
-                CharacterStateController.EnqueueTransition<NormalMovement>(); // Se pone el estado en cola
+               CharacterStateController.EnqueueTransition<NormalMovement>(); // Se pone el estado en cola
             }
         }
 
@@ -48,6 +59,16 @@ namespace Lightbug.CharacterControllerPro.Demo
         public override void UpdateBehaviour(float dt)
         {
             CharacterActor.PlanarVelocity = Vector3.zero;
+        }
+
+        public override void PreCharacterSimulation(float dt)
+        {
+            // Pre/PostCharacterSimulation methods are useful to update all the Animator parameters. 
+            // Why? Because the CharacterActor component will end up modifying the velocity of the actor.
+            if (!CharacterActor.IsAnimatorValid())
+                return;
+
+            CharacterStateController.Animator.SetBool(inputAttackParameter, punchButton);
         }
     }
 }

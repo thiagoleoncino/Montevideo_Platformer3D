@@ -889,14 +889,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 144248200}
-    - target: {fileID: 5947240398759808699, guid: 0705208bdc7fff04cbba23f2a702864d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5947240398759808699, guid: 0705208bdc7fff04cbba23f2a702864d, type: 3}
-      propertyPath: cameraTransform
-      value: 
-      objectReference: {fileID: 1978866103}
     - target: {fileID: 7438177852332854777, guid: 0705208bdc7fff04cbba23f2a702864d, type: 3}
       propertyPath: m_Mesh
       value: 

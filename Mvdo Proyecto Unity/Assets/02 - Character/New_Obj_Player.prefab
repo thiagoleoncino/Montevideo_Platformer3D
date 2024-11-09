@@ -248,7 +248,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 771
+  m_VersionIndex: 777
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -596,9 +596,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideAnimatorController: 1
   runtimeAnimatorController: {fileID: 9100000, guid: 292239d9e09085b4c9f0823183298a4c, type: 2}
-  punchButton: 0
   animator: {fileID: 5935638874085050661}
-  moveScript: {fileID: 7863018939276595022}
+  playerIsGrounded: 0
+  punchButton: 0
+  inputAttackParameter: InputAttack
 --- !u!1 &7863018939329465059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,7 +1210,7 @@ PrefabInstance:
     - target: {fileID: 4557834185776835037, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 4c77323136b9524478f3a5c86ed70c71, type: 2}
+      objectReference: {fileID: 9100000, guid: 292239d9e09085b4c9f0823183298a4c, type: 2}
     - target: {fileID: 4655969950934216104, guid: a34ea5dd3b6a91e45b326da5d7d54d1f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.016483398

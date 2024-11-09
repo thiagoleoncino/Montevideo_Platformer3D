@@ -11,6 +11,11 @@ namespace Lightbug.CharacterControllerPro.Demo
 
     public class YourCustomState : CharacterState
     {
+        //Update se actualiza en todo momento
+        private void Update()
+        {
+
+        }
 
         protected override void Awake()
         {
@@ -29,8 +34,18 @@ namespace Lightbug.CharacterControllerPro.Demo
             return true;
         }
 
+        //UpdateBehaviour se actualiza cuando el estado esta en uso
         public override void UpdateBehaviour(float dt)
         {
+
+        }
+
+        public override void PreCharacterSimulation(float dt)
+        {
+            // Pre/PostCharacterSimulation methods are useful to update all the Animator parameters. 
+            // Why? Because the CharacterActor component will end up modifying the velocity of the actor.
+            if (!CharacterActor.IsAnimatorValid())
+                return;
 
         }
     }
