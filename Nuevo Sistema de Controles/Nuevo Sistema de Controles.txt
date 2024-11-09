@@ -1,7 +1,7 @@
 - Copie el modelo base y le incorpore el modelo del personaje
 
 - Scripts:
-	> Cgaracter Body -> Cambie Width a 0.5 y Height a 1
+	> Character Body -> Cambie Width a 0.5 y Height a 1
 	> Character Actor
 		> Character Brain
 		> Character State Controller
@@ -36,13 +36,13 @@ en el Blend Tree del Animator los parametros Pos Y de CrouchIdle y CrouchMoving 
 					> Girar camara Trigger Derecho (joystick button 5)
 
 - Crear Nueva Accion
-	> Agregar nueva accion en Default Character Actions
+	> Agregar nueva accion en Default Character Actions (Componente, en la carpeta del Jugador)
 		> Ej> Bool Action - Element - Punch
 	> Agregar accion y Input en - Porject Settings - Input Manager (Mientras teengan el mismo nombre el Character Brain lo va a detectar)
 	> Agregar deteccion simple en el script
 		> if (Input.GetButton("Punch"))
-	> Crear Script con la base de YourCustomStat script en la pagina de documentacion.
-	> Agregar cambio de estado, en este caso de NormalMovement a Scr_Attack Captura 1	
+	> Crear Script con la base de YourCustomState script en la pagina de documentacion.
+	> Agregar cambio de estado, en este caso de NormalMovement a Scr_Attack (Captura 1)	
 	> Crear y agregar Animator Controller para las animaciones de la accion
 	> El Script debe estar localizado en 09-Packages/Character Controller Pro/Demo/Script/State, esto para que se pueda referenciar en otros scripts (Por ahora)
 	> 
