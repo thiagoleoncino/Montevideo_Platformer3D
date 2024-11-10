@@ -4,6 +4,7 @@ using UnityEngine;
 using Lightbug.CharacterControllerPro.Implementation;
 using Lightbug.CharacterControllerPro.Demo;
 using UnityEditor;
+using Lightbug.Utilities;
 
 namespace Lightbug.CharacterControllerPro.Demo
 {
@@ -22,7 +23,16 @@ namespace Lightbug.CharacterControllerPro.Demo
 
         [SerializeField]
         protected string inputAttackParameter = "InputAttack";
+        [SerializeField]
+        protected string playerGroundedParameter = "PlayerGrounded";
 
+        public CharacterStateController controller;
+
+        // Parámetros de movimiento vertical
+        [HideInInspector]
+        public VerticalMovementParameters verticalMovementParameters;
+        [HideInInspector]
+        public MaterialController materialController;
 
         private void Update()
         {
@@ -34,41 +44,71 @@ namespace Lightbug.CharacterControllerPro.Demo
         {
             base.Awake();
         }
-        
+
         // Condiciones para salir de este estado
-        public override void CheckExitTransition() 
+        public override void CheckExitTransition()
         {
-            // Si la animación actual es Idle
             AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0);
+
             if (currentState.IsName("001 - Idle"))
             {
-               CharacterStateController.EnqueueTransition<NormalMovement>(); // Se pone el estado en cola
+                CharacterStateController.EnqueueTransition<NormalMovement>();
             }
         }
 
-        // Write your transitions here
         public override bool CheckEnterTransition(CharacterState fromState)
         {
-            if (!CharacterActor.IsGrounded)
+            if (!(controller.CurrentCharacterState is NormalMovement)) //Si el actual estado es NormalMovment
                 return false;
 
             return true;
         }
 
-        // Write your update code here
         public override void UpdateBehaviour(float dt)
         {
-            CharacterActor.PlanarVelocity = Vector3.zero;
+            if (playerIsGrounded)
+            {
+                CharacterActor.PlanarVelocity = Vector3.zero;
+            }
+            else
+            {
+                // Aplica la gravedad cuando el personaje no está en el suelo
+                ProcessGravity(dt);
+            }
         }
 
         public override void PreCharacterSimulation(float dt)
         {
-            // Pre/PostCharacterSimulation methods are useful to update all the Animator parameters. 
-            // Why? Because the CharacterActor component will end up modifying the velocity of the actor.
             if (!CharacterActor.IsAnimatorValid())
                 return;
 
             CharacterStateController.Animator.SetBool(inputAttackParameter, punchButton);
+            CharacterStateController.Animator.SetBool(playerGroundedParameter, playerIsGrounded);
+        }
+
+        // Función para procesar la gravedad cuando el personaje no está en el suelo
+        protected virtual void ProcessGravity(float dt)
+        {
+            if (!verticalMovementParameters.useGravity)
+                return;
+
+            verticalMovementParameters.UpdateParameters();
+
+            float gravityMultiplier = 1f;
+
+            if (materialController != null)
+            {
+                gravityMultiplier = CharacterActor.LocalVelocity.y >= 0 ?
+                    materialController.CurrentVolume.gravityAscendingMultiplier :
+                    materialController.CurrentVolume.gravityDescendingMultiplier;
+            }
+
+            float gravity = gravityMultiplier * verticalMovementParameters.gravity;
+
+            if (!CharacterActor.IsStable)
+            {
+                CharacterActor.VerticalVelocity += CustomUtilities.Multiply(-CharacterActor.Up, gravity, dt);
+            }
         }
     }
 }

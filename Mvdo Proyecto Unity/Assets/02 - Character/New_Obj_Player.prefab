@@ -248,7 +248,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 777
+  m_VersionIndex: 780
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -600,6 +600,30 @@ MonoBehaviour:
   playerIsGrounded: 0
   punchButton: 0
   inputAttackParameter: InputAttack
+  playerGroundedParameter: PlayerGrounded
+  controller: {fileID: 7863018939276595021}
+  verticalMovementParameters:
+    useGravity: 1
+    canJump: 1
+    autoCalculate: 1
+    jumpApexHeight: 2.25
+    jumpApexDuration: 0.5
+    jumpSpeed: 10
+    gravity: 10
+    cancelJumpOnRelease: 1
+    cancelJumpMultiplier: 0.5
+    cancelJumpMinTime: 0.1
+    cancelJumpMaxTime: 0.3
+    preGroundedJumpTime: 0.2
+    postGroundedJumpTime: 0.1
+    availableNotGroundedJumps: 1
+    canJumpOnUnstableGround: 0
+    canJumpDown: 1
+    filterByTag: 0
+    jumpDownTag: JumpDown
+    jumpDownDistance: 0.05
+    jumpDownVerticalVelocity: 0.5
+  materialController: {fileID: 0}
 --- !u!1 &7863018939329465059
 GameObject:
   m_ObjectHideFlags: 0

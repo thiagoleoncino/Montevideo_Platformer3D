@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|solutionrelative:assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\scr_attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\normalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\normalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|solutionrelative:assets\\09 - packages\\character controller pro\\demo\\scripts\\states\\normalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\02 - character\\yourcustomstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\yourcustomstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|c:\\users\\thiago\\desktop\\3d_mvdo\\mvdo proyecto unity\\assets\\09 - packages\\character controller pro\\implementation\\scripts\\character\\states\\characterstatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7684BBF-F95A-4365-4BDE-78B61B8EF994}|com.lightbug.character-controller-pro.csproj|solutionrelative:assets\\09 - packages\\character controller pro\\implementation\\scripts\\character\\states\\characterstatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\02 - character\\script\\scr_playercamaracontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\script\\scr_playercamaracontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\assets\\02 - character\\yourcustomstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F051F96-5AB0-50D9-DB1C-042803BF034D}|Assembly-CSharp.csproj|solutionrelative:assets\\02 - character\\yourcustomstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "CharacterStateController.cs",
+              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\States\\CharacterStateController.cs",
+              "RelativeDocumentMoniker": "Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\States\\CharacterStateController.cs",
+              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\States\\CharacterStateController.cs",
+              "RelativeToolTip": "Assets\\09 - Packages\\Character Controller Pro\\Implementation\\Scripts\\Character\\States\\CharacterStateController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T23:34:11.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "YourCustomState.cs",
               "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\YourCustomState.cs",
               "RelativeDocumentMoniker": "Assets\\02 - Character\\YourCustomState.cs",
@@ -49,7 +62,7 @@
               "RelativeDocumentMoniker": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\NormalMovement.cs",
               "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\NormalMovement.cs",
               "RelativeToolTip": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\NormalMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T17:17:04.057Z",
               "EditorCaption": ""
@@ -62,22 +75,9 @@
               "RelativeDocumentMoniker": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Scr_Attack.cs",
               "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Scr_Attack.cs",
               "RelativeToolTip": "Assets\\09 - Packages\\Character Controller Pro\\Demo\\Scripts\\States\\Scr_Attack.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCEAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T01:27:35.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Scr_PlayerCamaraControl.cs",
-              "DocumentMoniker": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\Scr_PlayerCamaraControl.cs",
-              "RelativeDocumentMoniker": "Assets\\02 - Character\\Script\\Scr_PlayerCamaraControl.cs",
-              "ToolTip": "C:\\Users\\Thiago\\Desktop\\3D_Mvdo\\Mvdo Proyecto Unity\\Assets\\02 - Character\\Script\\Scr_PlayerCamaraControl.cs",
-              "RelativeToolTip": "Assets\\02 - Character\\Script\\Scr_PlayerCamaraControl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T23:53:52.599Z",
               "EditorCaption": ""
             }
           ]
