@@ -7,3 +7,7 @@ Mejoras:
 
 Scripts
 01: 
+
+Bugs:
+Monedas - Interfieren con objetos del escenario, no deberian. 
+UI - Atraviesa objetos del escenario.

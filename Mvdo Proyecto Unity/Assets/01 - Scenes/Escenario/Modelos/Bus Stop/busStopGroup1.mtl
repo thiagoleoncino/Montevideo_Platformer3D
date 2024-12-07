@@ -1,0 +1,65 @@
+# Material file for busStopGroup1.obj
+
+newmtl bus
+	Ns 96
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 1.0 1.0 1.0
+	map_Kd 2.png
+
+newmtl poster1
+	Ns 96
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 1.0 1.0 1.0
+	map_Kd 3.png
+
+newmtl poster2
+	Ns 96
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 1.0 1.0 1.0
+	map_Kd 4.png
+
+newmtl shadow
+	Ns 96
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 1.0 1.0 1.0
+	map_Kd 0.png
+
+newmtl shadow_NONE
+	Ns 96
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 1.0 1.0 1.0
+	map_Kd 0.png
+
+newmtl sketchy
+	Ns 96
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 1.0 1.0 1.0
+	map_Kd 1.png
+
+newmtl vertex
+	Ns -1
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 1.0 1.0 1.0
+	map_Kd 5.png
+
