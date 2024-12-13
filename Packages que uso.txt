@@ -1,5 +1,0 @@
-- Pro Builder - Geometria
-- Text Mesh Pro - Texto
-- Cinemachine - Camara
-- Character Controller Pro - Control
-- Paint in Brush - Texture
